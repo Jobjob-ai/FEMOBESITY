@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang='he' dir='rtl'>
+<head>
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta name='robots' content='noindex, nofollow'>
+<title>AI בפעולה – אתר עזר</title>
+<meta name='description' content='אתר עזר למצגת: AI בפעולה במרפאה וביום יום – ד״ר רועי שליט'>
+<link rel='preconnect' href='https://fonts.googleapis.com'>
+<link href='https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;800&display=swap' rel='stylesheet'>
+<style>
+:root{--bg:#070b14;--panel:#0e1524;--panel2:#121c30;--line:#24324d;--text:#e9eef8;--muted:#9fb0cc;--gold:#ffc83d;--cyan:#38d2ff;--red:#ff6b6b;--green:#4ade80;--yellow:#fbbf24}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Heebo,system-ui,sans-serif;line-height:1.65;font-size:17px}
+a{color:var(--cyan)}
+.wrap{max-width:1020px;margin:0 auto;padding:0 20px}
+nav{position:sticky;top:0;z-index:10;background:rgba(7,11,20,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;gap:6px;overflow-x:auto;padding:10px 20px;scrollbar-width:none}
+nav a{white-space:nowrap;text-decoration:none;color:var(--muted);font-size:14px;padding:6px 12px;border-radius:99px;border:1px solid transparent}
+nav a:hover,nav a.on{color:var(--gold);border-color:var(--line);background:var(--panel)}
+header.hero{padding:64px 0 40px;background:radial-gradient(900px 400px at 85% -10%,rgba(255,200,61,.18),transparent),radial-gradient(700px 400px at 0% 0%,rgba(56,210,255,.12),transparent)}
+.hero h1{font-size:clamp(34px,6vw,60px);line-height:1.1;margin:0 0 10px;font-weight:800}
+.hero h1 span{color:var(--gold)}
+.hero p.sub{color:var(--muted);font-size:19px;max-width:660px;margin:0 0 22px}
+.chip{display:inline-block;border:1px solid var(--gold);color:var(--gold);border-radius:99px;padding:3px 14px;font-size:14px;margin-bottom:18px}
+.byline{color:var(--text);font-weight:500}
+.byline small{display:block;color:var(--muted);font-weight:400}
+section{padding:46px 0;border-top:1px solid var(--line)}
+h2{font-size:clamp(26px,4vw,36px);margin:0 0 6px;font-weight:700}
+h2 em{font-style:normal;color:var(--gold)}
+.lead{color:var(--muted);margin:0 0 26px;max-width:740px}
+.grid{display:grid;gap:16px}
+.g3{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.g2{grid-template-columns:repeat(auto-fit,minmax(310px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px}
+.card h3{margin:0 0 6px;font-size:20px}
+.src{font-size:13px;color:var(--muted);margin-top:14px}
+.bars{display:flex;align-items:flex-end;gap:18px;height:210px;margin:6px 0 4px}
+.bar{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:100%}
+.bar i{display:block;width:100%;max-width:90px;border-radius:10px 10px 0 0;background:linear-gradient(180deg,var(--cyan),#2b6cf0)}
+.bar:nth-child(3) i{background:linear-gradient(180deg,#ff7aa8,#e8336b)}
+.bar b{font-size:22px;margin-bottom:4px}
+.years{display:flex;gap:18px}.years span{flex:1;text-align:center;color:var(--muted);font-size:14px}
+.stat{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding:12px 0}
+.stat:last-child{border:0}.stat b{font-size:28px;color:var(--gold)}
+.rule{border-top:4px solid var(--gold)}
+.rule:nth-child(even){border-top-color:var(--cyan)}
+.rule .n{color:var(--muted);font-size:13px;letter-spacing:.04em}
+.rule dt{font-weight:700;color:var(--gold);margin-top:10px}
+.rule:nth-child(even) dt{color:var(--cyan)}
+.rule dd{margin:2px 0 0}
+.traffic{display:grid;gap:10px;margin-top:12px}
+.lt{display:flex;gap:10px;align-items:flex-start;font-size:15px}.lt i{flex:none;width:14px;height:14px;border-radius:50%;margin-top:7px}
+.steps{counter-reset:s;display:grid;gap:14px;padding:0;list-style:none}
+.steps li{counter-increment:s;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px 76px 18px 20px;position:relative}
+.steps li::before{content:counter(s);position:absolute;right:18px;top:16px;width:42px;height:42px;border-radius:50%;background:var(--gold);color:#111;font-weight:800;display:grid;place-items:center;font-size:20px}
+.steps h3{margin:0 0 4px;font-size:19px}
+.steps p{margin:0;color:var(--muted)}
+.ui{direction:ltr;unicode-bidi:isolate;display:inline-block;background:#1b2740;border:1px solid #33466b;border-radius:7px;padding:0 8px;font-family:ui-monospace,Consolas,monospace;font-size:14px;color:var(--gold)}
+kbd{direction:ltr;unicode-bidi:isolate;display:inline-block;background:#1b2740;border:1px solid #33466b;border-bottom-width:3px;border-radius:7px;padding:1px 9px;font-family:ui-monospace,Consolas,monospace;font-size:14px;color:var(--text)}
+.os{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));margin-top:14px}
+.os .card{display:flex;flex-direction:column;gap:10px}
+.keys{direction:ltr;display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.case{white-space:pre-wrap;direction:rtl;text-align:right;background:#fff;color:#14203a;border-radius:12px;padding:16px 18px;font-size:15.5px;line-height:1.7;border:3px solid var(--gold)}
+.case.dark{background:var(--panel2);color:var(--text);border:1px solid var(--line)}
+.note{border:1px dashed var(--gold);border-radius:14px;padding:14px 16px;background:rgba(255,200,61,.06);color:var(--text);font-size:15px}
+.disc{direction:ltr;text-align:left;font-size:14.5px;color:#c6d2e8}
+.disc ul{padding-left:20px;margin:8px 0}
+footer{padding:36px 0 60px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+.btn{display:inline-block;background:var(--gold);color:#111;text-decoration:none;font-weight:700;border-radius:12px;padding:10px 18px;margin:4px 0}
+.btn.alt{background:transparent;color:var(--gold);border:1px solid var(--gold)}
+@media(max-width:600px){body{font-size:16px}.steps li{padding-right:68px}}
+</style>
+</head>
+<body>
+<nav><div class='wrap'>
+<a href='#why'>למה עכשיו</a><a href='#limits'>מגבלות</a><a href='#rules'>5 החוקים</a><a href='#privacy'>אנונימיזציה</a><a href='#oe'>OpenEvidence</a><a href='#femobesity'>.femobesity</a><a href='#examples'>דוגמאות</a><a href='#disclosures'>גילוי נאות</a>
+</div></nav>
+
+<header class='hero'><div class='wrap'>
+<span class='chip'>אתר עזר למצגת</span>
+<h1><span>AI</span> בפעולה<br>במרפאה וביום יום</h1>
+<p class='sub'>סיכום מובנה של תוכן המצגת, החוקים לשימוש בטוח ב-AI, והוראות העבודה עם OpenEvidence, במקום אחד שאפשר לחזור אליו בקליניקה.</p>
+<div class='byline'>ד״ר רועי שליט<small>מנהל מכון סוכרת נתניה · מנהל תחום AI וחדשנות באגודה האנדוקרינית הישראלית</small></div>
+</div></header>
+
+<main class='wrap'>
+
+<section id='why'>
+<h2>השימוש ב-AI <em>גדל במהירות</em></h2>
+<p class='lead'>לפי השקף במצגת, תוך שלוש שנים אחוז המשתמשים בכלי AI עלה מ-48% ל-92%, ההטמעה המהירה ביותר שתועדה בהיסטוריה של טכנולוגיות.</p>
+<div class='grid g2'>
+<div class='card'><h3>משתמשים בכלי AI</h3>
+<div class='bars' role='img' aria-label='48% ב-2023, 69% ב-2024, 92% ב-2025'>
+<div class='bar'><b>48%</b><i style='height:48%'></i></div>
+<div class='bar'><b>69%</b><i style='height:69%'></i></div>
+<div class='bar'><b>92%</b><i style='height:92%'></i></div></div>
+<div class='years'><span>2023</span><span>2024</span><span>2025</span></div></div>
+<div class='card'><h3>לפי קבוצת גיל</h3>
+<div class='stat'><span>מבוגרים בגילאי 60+</span><b>85%</b></div>
+<div class='stat'><span>ילדים בגילאי 7–12</span><b>57%</b></div>
+<div class='stat'><span>נוער</span><b>98%</b></div>
+<p class='src'>הנתונים מועתקים משקף 4 במצגת. מקור הנתונים ושיטת המדידה אינם מצוינים בשקף, ולכן אין לצטט אותם כנתון מחקרי ללא אימות מול המקור.</p></div>
+</div>
+</section>
+
+<section id='limits'>
+<h2>חסרונות <em>שחשוב להבין</em></h2>
+<p class='lead'>שני נושאים שהמצגת מציגה לפני החוקים: הזיות, והסיבה שאי אפשר פשוט ״לשאול כמו שרוצים״.</p>
+<div class='grid g2'>
+<div class='card'><h3>הזיות (Hallucinations)</h3><p>מודלי שפה מייצרים טקסט סביר-לכאורה, וייתכן שהוא שגוי או מומצא, כולל ציטוטים ומקורות. המצגת מציגה שתי דוגמאות מהשטח (שיחת וואטסאפ וידיעה חדשותית) שבהן תוכן שנוצר על ידי מודל התברר כלא נכון.</p></div>
+<div class='card'><h3>למה לא פשוט לשאול?</h3><p>השקף מציג שאלה יומיומית פשוטה והתשובות של ChatGPT ושל Gemini עליה, כדי להדגים שהניסוח, ההקשר ובחירת המודל משפיעים על התשובה. מכאן הצורך בחוקים מוגדרים.</p></div>
+</div>
+</section>
+
+<section id='rules'>
+<h2>5 החוקים לשימוש <em>בטוח</em></h2>
+<p class='lead'>חמישה חוקים שנועדו להגן על המטופלים ועל הרופא. כל חוק מורכב מעיקרון ומפרוטוקול.</p>
+<div class='grid g3'>
+<article class='card rule'><div class='n'>חוק 1</div><h3>אימות מוחלט <small>(Zero Trust)</small></h3><dl><dt>עיקרון</dt><dd>כל פלט הוא טיוטה, לא אמת.</dd><dt>פרוטוקול</dt><dd>מאמתים נתונים קריטיים (מינון, ICD) במקור מוסמך כמו UpToDate. אין לקבל ציטוטים כפי שהם.</dd></dl></article>
+<article class='card rule'><div class='n'>חוק 2</div><h3>הקשר מפורש <small>(Explicit Context)</small></h3><dl><dt>עיקרון</dt><dd>המודל אינו מכיר את ההקשר הקליני.</dd><dt>פרוטוקול</dt><dd>מנסחים כל בקשה בנוסחת תפקיד–משימה–אילוץ, ומבקשים להציג אבחנות תוך תיעדוף.</dd></dl></article>
+<article class='card rule'><div class='n'>חוק 3</div><h3>היגיינת מידע <small>(Privacy First)</small></h3><dl><dt>עיקרון</dt><dd>מודל ציבורי הוא מרחב ציבורי.</dd><dt>פרוטוקול</dt><dd>לא מקלידים פרטים מזהים. מידע רגיש (מבעין המעליה) מוזן רק למודלים ארגוניים.</dd></dl></article>
+<article class='card rule'><div class='n'>חוק 4</div><h3>תיחום גבולות <small>(Scope Limitation)</small></h3><dl><dt>עיקרון</dt><dd>מודל שפה נועד לעיבוד, לא להחלטות.</dd><dt>פרוטוקול</dt><dd>מפת רמזור:</dd></dl>
+<div class='traffic'>
+<div class='lt'><i style='background:var(--green)'></i><span>ירוק: סיכום</span></div>
+<div class='lt'><i style='background:var(--yellow)'></i><span>צהוב: אבחנה מבדלת</span></div>
+<div class='lt'><i style='background:var(--red)'></i><span>אדום: חישוב, Staging</span></div></div></article>
+<article class='card rule'><div class='n'>חוק 5</div><h3>כפיית ביקורתיות <small>(Bias Check)</small></h3><dl><dt>עיקרון</dt><dd>המודל משקף הטיות שבנתוני האימון.</dd><dt>פרוטוקול</dt><dd>מסירים מגדר ומוצא מהשאלה כשהם אינם רלוונטיים, ודורשים חשיבה לוגית מפורשת (״למה?״).</dd></dl></article>
+</div>
+<p class='src'>נוסח החוקים מועתק משקף 8. חלק מהטקסט בשקף נקרא בקושי בתצוגה מוקטנת; מומלץ להשוות את הניסוח המדויק מול המצגת המקורית.</p>
+</section>
+
+<section id='privacy'>
+<h2>איך מעתיקים מידע <em>בצורה אנונימית</em></h2>
+<p class='lead'>לפי המצגת, זה השלב החשוב ביותר: להעתיק נתוני מעבדה, תיק רפואי וצילומי מסך מבלי לחשוף את זהות המטופל.</p>
+<div class='grid g2'>
+<div class='card'><h3>אנמנזה</h3><p>אפשר להעתיק ישירות מהקליקס. בכל מקרה יש לוודא חיסיון לפני ההדבקה.</p></div>
+<div class='card'><h3>בדיקות מעבדה ומדדים</h3><p>אפשר להעתיק בקלות בעזרת כלי הגזירה של מערכת ההפעלה, תוך הקפדה על חיסיון.</p></div>
+</div>
+<div class='os'>
+<div class='card'><b>Mac</b><div class='keys'><kbd>Shift</kbd>+<kbd>⌘ Command</kbd>+<kbd>5</kbd></div><span class='src' style='margin:0'>פותח סרגל צילום מסך עם אפשרויות לצילום מסך מלא, חלון או אזור נבחר, והקלטת מסך.</span></div>
+<div class='card'><b>Windows</b><div class='keys'><kbd>Shift</kbd>+<kbd>Win</kbd>+<kbd>S</kbd></div><span class='src' style='margin:0'>פותח את כלי הגזירה, כולל בחירת אזור, סימון (Quick Markup) ו-Text Extractor לחילוץ טקסט.</span></div>
+</div>
+<div class='card' style='margin-top:16px'>
+<h3>הפיכת צילום מסך לטקסט</h3>
+<p>אחרי הגזירה מדביקים ל-ChatGPT או ל-Gemini ומבקשים את הפרומפט שמופיע במצגת (שקף 13), שהופך צילומי מסך לטקסט שניתן להעתיק. קוד ה-QR בשקף מוביל ל-Gem ב-Gemini.</p>
+<a class='btn alt' href='https://gemini.google.com/gem/1DNTxwnmM_QZWnf1IaJHiZwQOZ8yYATFg?usp=sharing' target='_blank' rel='noopener'>פתיחת ה-Gem</a>
+<p class='src' style='margin-top:6px'>הקישור פוענח מקוד ה-QR בשקף 13. הוא מוביל לכלי חיצוני, ויש לבדוק בו חיסיון לפני הזנת מידע.</p>
+</div>
+</section>
+
+<section id='oe'>
+<h2>למה נבחר <em>OpenEvidence</em></h2>
+<p class='lead'>שקף 10 מציג השוואת ביצועים בין OpenEvidence למודלי יסוד כלליים, מתוך פוסט בבלוג של OpenEvidence מתאריך 3 בספטמבר 2026.</p>
+<div class='card'>
+<p>הנתונים בהשוואה פורסמו על ידי הספק עצמו ולא על ידי גוף בלתי תלוי. לכן כדאי לקרוא את המקור, לבדוק אילו מבחנים נעשה בהם שימוש ובאיזו גרסת מודל, ולא להסתמך על הטבלה כהוכחה עצמאית.</p>
+<p style='margin-bottom:0'><a class='btn alt' href='https://www.openevidence.com/blog/model-family' target='_blank' rel='noopener'>לפוסט המקורי</a></p>
+</div>
+<div class='card' style='margin-top:16px;border-color:var(--gold)'>
+<h3>שיחת דמו ב-OpenEvidence</h3>
+<p>שקף 16 (״ומה נקבל בסוף, אחרי בדיקה שלנו כמובן?״) מציג את התוצאה מהשיחה על המקרה הלדוגמה. קוד ה-QR בשקף מוביל לשיחה עצמה.</p>
+<a class='btn' href='https://www.openevidence.com/ask/a7dcbe3a-6e30-41fc-b1d2-a2ecc02b71ae' target='_blank' rel='noopener'>לשיחת הדמו</a>
+<p class='src' style='margin-top:6px'>הקישור פוענח מקוד ה-QR בשקף 16. לא הצלחתי לפתוח את השיחה מהצד שלי כדי לוודא שהיא נגישה לציבור, ולכן כדאי לבדוק אותה בדפדפן לפני שיתוף. כמו בכל פלט של מודל, התוצר מצריך בדיקה של הרופא (חוק 1).</p>
+</div>
+</section>
+
+<section id='femobesity'>
+<h2>איך מגיעים ל-<em>.femobesity</em></h2>
+<p class='lead'>שבעה צעדים כפי שמופיעים בשקפים 14–15 (הוראות למחשב), עם שמות הכפתורים כפי שהם מופיעים בממשק.</p>
+
+<div class='grid g2' style='margin-bottom:22px'>
+<div class='card'><h3>מהו Dotflow</h3><p>Dotflow הוא מנגנון ב-OpenEvidence ששומר הוראות לשימוש חוזר, שאפשר להפעיל בכל שיחה כדי לקבוע את מבנה התשובה, להוסיף הקשר או להריץ תהליך עבודה קבוע. את ה-Dotflow ממפעילים בסימון נקודה לפני שמו, למשל <span class='ui'>.femobesity</span>.</p></div>
+<div class='card'><h3>למה נועד .femobesity</h3><p>לפי כרטיס ה-Dotflow שמופיע בשקפים, הוא מפיק בעברית תשובה קלינית ומובנית על בסיס חיפוש ראיות עדכני, כולל הערכת רמת הראיות וסיכום. השקף מציג אותו בחיפוש ״Obesity״, כלומר כלי למקרים של השמנה.</p></div>
+</div>
+<div class='note' style='margin-bottom:22px'>מה לא ידוע מהמצגת: ההוראות המדויקות שנמצאות בתוך ה-Dotflow אינן מוצגות, והכרטיס מציג את היוצר כ-Anonymous עם 2 שימושים. זהו Dotflow מהקהילה (Community Dotflows) ולא כלי רשמי של OpenEvidence. כדי לראות מה הוא עושה בפועל, פותחים אותו ב-OpenEvidence לפני השימוש הראשון, ובודקים את התוצר לפי חוק 1.</div>
+
+<ol class='steps'>
+<li><h3>נכנסים ל-OpenEvidence</h3><p>פותחים את האתר <span class='ui'>openevidence.com</span> ומתחברים לחשבון שלכם.</p></li>
+<li><h3>פותחים את Dotflows</h3><p>בתפריט השמאלי לוחצים על <span class='ui'>Tools</span> ואז בוחרים <span class='ui'>Dotflows</span>.</p></li>
+<li><h3>מחפשים ב-Community Dotflows</h3><p>לוחצים על הלשונית <span class='ui'>Community Dotflows</span>, מקלידים בחיפוש <span class='ui'>Obesity</span> ובוחרים מהרשימה את <span class='ui'>.femobesity</span>.</p></li>
+<li><h3>מוסיפים אותו לרשימה שלכם</h3><p>בחלון הפרטים של ה-Dotflow לוחצים על <span class='ui'>Add to my dotflows</span> כדי לשמור אותו בחשבון.</p></li>
+<li><h3>פותחים שיחה חדשה</h3><p>לוחצים על <span class='ui'>New Conversation</span>.</p></li>
+<li><h3>מפעילים את ה-Dotflow בשיחה</h3><p>בתיבת השאלה לוחצים על סימן הפלוס <span class='ui'>+</span>, בוחרים <span class='ui'>Dotflows</span> ואז <span class='ui'>.femobesity</span> מהרשימה.</p></li>
+<li><h3>מזינים את סיפור המקרה</h3><p>כותבים או מדביקים את סיפור המקרה, כולל אנמנזה, בדיקות ומעבדה, ושולחים. הסירו קודם פרטים מזהים (חוק 3). דוגמה מלאה בסעיף הבא.</p></li>
+</ol>
+<p class='src'>שמות הכפתורים והמסלול נלקחו מהשקפים; הממשק של OpenEvidence עשוי להשתנות עם הזמן.</p>
+</section>
+
+<section id='examples'>
+<h2>הדוגמאות <em>מהמצגת</em></h2>
+<p class='lead'>שתי דוגמאות שהוצגו בשקפים. שתיהן דוגמאות לא אמיתיות. הטקסט הועתק מתמונות השקפים ולכן ייתכנו סטיות קטנות בניסוח.</p>
+
+<div class='card'>
+<h3>דוגמה 1: אנמנזה מהקליקס (שקף 9)</h3>
+<p>המקרה שעליו מבוססת השיחה. בשקף מסומן: ״מקרה לדוגמה לא נתוני אמת״. הטקסט בשקף נחתך בתחתיתו, ולכן הסיום חלקי.</p>
+<div class='case'>***מקרה לדוגמה לא נתוני אמת***
+איילת, בת 48, נשואה + 4, עורכת דין במקצוע.
+
+* **מחלות רקע:** בריאה בדרך כלל
+* **רקע מיילדותי:** סוכרת הריון בשני ההריונות האחרונים (האחרון לפני 9 שנים).
+* **טיפול תרופתי נוכחי:** פריזמה (Fluoxetine)
+* **סיבת הפנייה העיקרית:** תסכול מעלייה מתמשכת במשקל (במיוחד בטני), אינסומניה, ירידה בחשק המיני, החמרת כאבי שרירים וראש, ובירור הקשר לגיל המעבר.
+
+**תולדות מחלה נוכחית (HPI):**
+* **רקע לפני 3 חודשים:** הגיעה במקור עם תלונות על חרדה, סטרס קיצוני (בנה הבכור בלבנון), דפיקות לב מואצות, הפרעות שינה קשות ואכילה רגשית. ביקשה בדיקת קורטיזול ובדיקת בלוטת התריס מתוך תפיסה שהסטרס והקורטיזול גורמים להשמנה הבטנית.
+* **טיפול שהוחל אז:** הוגדרה כסובלת מ-Adjustment disorder with anxiety, אינסומניה, השמנה, טרום-סוכרת ודיסליפידמיה. הוחל טיפול בפריזמה (Fluoxetine / SSRI), הדרכה להיגיינת שינה, והפניה ל-CBTi, פסיכולוג ודיאטנית.
+
+אבחנה בטבלת הבעיות: OVERWEIGHT (25=&lt;BMI&lt;30)</div>
+</div>
+
+<div class='card' style='margin-top:16px'>
+<h3>דוגמה 2: סיפור המקרה שמוזנים ל-.femobesity (שקף 15, צעד 7)</h3>
+<p>הנוסח המקוצר שמוצג בתיבת השאלה.</p>
+<div class='case dark'>סיפור מקרה:
+אישה בת 48, BMI 34, עודף משקל, מתלוננת על עלייה במשקל, גלי חום, עייפות והפרעות שינה.
+
+אנמנזה: כנ״ל, תרופות, מחלות רקע, היסטוריה גינקולוגית, אורח חיים וכו׳.
+
+בדיקות מעבדה:
+HbA1c 5.8%
+TSH 2.3 mIU/L
+LH 28 IU/L
+FSH 46 IU/L
+Estradiol 22 pg/mL
+Lipid profile: LDL 130, HDL 48, TG 180
+ALT 42 U/L</div>
+<p class='src'>שימו לב: בדוגמה 1 האבחנה היא OVERWEIGHT (BMI בטווח 25–30), ואילו בדוגמה 2 מופיע BMI 34. מדובר בשתי דוגמאות שונות, והן אינן מתארות אותה מטופלת באותם נתונים.</p>
+</div>
+</section>
+
+<section id='community'>
+<h2>להתנסות <em>ולהצטרף</em></h2>
+<div class='card'><p style='margin:0'>המצגת מזמינה להצטרף לקבוצת הוואטסאפ השקטה ולהתחיל להתנסות. קישורי הכלים נשלחים בדיוור לאחר הוובינר. הדגש הוא על כלים פרקטיים שאפשר להשתמש בהם בקליניקה כבר למחרת.</p></div>
+</section>
+
+<section id='disclosures'>
+<h2>גילוי נאות</h2>
+<div class='note' style='margin-bottom:16px'>המצגת בחסות חברת אלי לילי ומיועדת להצגה בפני הצוות הרפואי בלבד. שמות המשתתפים במפגש נשמרים אצל אלי-לילי ישראל בע״מ וחברות קשורות אליה לצורך תיעוד האירוע ותפעולו.</div>
+<div class='card disc'>
+<b>Disclosures (as presented)</b>
+<p>Consultant to: AstraZeneca, Eli Lilly, Boehringer Ingelheim.<br>Speaker Service to: AstraZeneca, Boehringer Ingelheim, Medtronic, Novo Nordisk, Eli Lilly.<br>Research Services from: Medtronic.</p>
+<ul>
+<li>We remind you that, during this meeting, the topics covered will be exclusively within the framework of the product's indication, in accordance with local Legislative Decree and our Global procedure.</li>
+<li>We anticipate that any questions relating to matters outside the product SPC indication may be addressed in 1:1 meetings with the speakers, separately and at the end of the meeting, (with medical Lilly person) but will not be discussed during the plenary session.</li>
+</ul></div>
+</section>
+</main>
+
+<footer><div class='wrap'>
+אתר זה הוא עזר לימודי המבוסס על תוכן המצגת, ואינו מהווה ייעוץ רפואי או תחליף לשיקול דעת קליני. אין להזין בכלי AI מידע מזהה של מטופלים. גרסת האתר נבנתה מתוכן המצגת נכון ל-8.10.2026.
+</div></footer>
+
+<script>
+(function(){
+  var links=[].slice.call(document.querySelectorAll('nav a')),secs=links.map(function(a){return document.querySelector(a.getAttribute('href'))});
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(l){l.classList.toggle('on',l.getAttribute('href')==='#'+e.target.id)})}})},{rootMargin:'-40% 0px -55% 0px'});secs.forEach(function(s){if(s)io.observe(s)})}
+})();
+</script>
+</body>
+</html>
