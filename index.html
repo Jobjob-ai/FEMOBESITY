@@ -4,125 +4,162 @@
 <meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'>
 <meta name='robots' content='noindex, nofollow'>
+<meta name='color-scheme' content='dark'>
+<meta name='theme-color' content='#070b14'>
 <title>AI בפעולה – אתר עזר</title>
 <meta name='description' content='אתר עזר: AI בפעולה במרפאה וביום יום – ד״ר רועי שליט'>
 <link rel='preconnect' href='https://fonts.googleapis.com'>
-<link href='https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;800&display=swap' rel='stylesheet'>
+<link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+<link href='https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700;900&family=Heebo:wght@300;400;500;700&display=swap' rel='stylesheet'>
 <style>
-:root{--bg:#070b14;--panel:#0e1524;--panel2:#121c30;--line:#24324d;--text:#e9eef8;--muted:#9fb0cc;--gold:#ffc83d;--cyan:#38d2ff;--red:#ff6b6b;--green:#4ade80;--yellow:#fbbf24}
+:root{--bg:#070b14;--panel:#0e1524;--panel2:#121c30;--line:#22304a;--text:#eaf0fa;--muted:#a3b3cf;--gold:#ffc83d;--cyan:#5cd6ff;--red:#ff7b7b;--green:#52d98a;--serif:'Frank Ruhl Libre','Times New Roman',serif;--sans:Heebo,system-ui,sans-serif}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:72px}
-body{margin:0;background:var(--bg);color:var(--text);font-family:Heebo,system-ui,sans-serif;line-height:1.65;font-size:17px}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.7;font-size:17px;-webkit-font-smoothing:antialiased}
 a{color:var(--cyan)}
-.wrap{max-width:1020px;margin:0 auto;padding:0 20px}
-nav{position:sticky;top:0;z-index:10;background:rgba(7,11,20,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-nav .wrap{display:flex;gap:6px;overflow-x:auto;padding:10px 20px;scrollbar-width:none}
-nav a{white-space:nowrap;text-decoration:none;color:var(--muted);font-size:14px;padding:6px 12px;border-radius:99px;border:1px solid transparent}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:6px}
+.skip{position:absolute;right:12px;top:-60px;background:var(--gold);color:#111;padding:8px 14px;border-radius:8px;z-index:50;font-weight:700;text-decoration:none}
+.skip:focus{top:10px}
+#progress{position:fixed;top:0;right:0;height:3px;width:0;background:var(--gold);z-index:40}
+
+/* hero */
+.hero{position:relative;overflow:hidden;min-height:min(86vh,720px);display:flex;align-items:flex-end;background:radial-gradient(900px 480px at 85% 0%,rgba(255,200,61,.16),transparent),radial-gradient(800px 500px at 0% 20%,rgba(56,210,255,.12),transparent),var(--bg)}
+.hero canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.hero::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,11,20,.25) 0%,rgba(7,11,20,.55) 60%,var(--bg) 100%);pointer-events:none}
+.hero .in{position:relative;z-index:2;width:100%;max-width:1180px;margin:0 auto;padding:110px 24px 56px}
+.chip{display:inline-block;border:1px solid rgba(255,200,61,.6);color:var(--gold);border-radius:99px;padding:3px 14px;font-size:14px;margin-bottom:20px;background:rgba(7,11,20,.5)}
+.hero h1{font-family:var(--serif);font-weight:900;font-size:clamp(40px,7.2vw,88px);line-height:1.05;margin:0 0 18px;letter-spacing:-.01em}
+.hero p.sub{color:#c9d6ee;font-size:clamp(17px,2vw,21px);max-width:620px;margin:0 0 28px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:34px}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:#101010;text-decoration:none;font-weight:700;border-radius:12px;padding:12px 22px;font-size:16px;transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(255,200,61,.25)}
+.btn.alt{background:rgba(7,11,20,.5);color:var(--gold);border:1px solid var(--gold)}
+.byline{font-weight:500}.byline small{display:block;color:var(--muted);font-weight:400;font-size:14.5px}
+
+/* layout */
+.page{max-width:1180px;margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:20;background:rgba(7,11,20,.94);backdrop-filter:blur(8px);margin:0 -24px;padding:0 24px;border-bottom:1px solid var(--line)}
+nav ul{list-style:none;margin:0;padding:10px 0;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}
+nav a{display:block;white-space:nowrap;text-decoration:none;color:var(--muted);font-size:14.5px;padding:6px 13px;border-radius:99px;border:1px solid transparent}
 nav a:hover,nav a.on{color:var(--gold);border-color:var(--line);background:var(--panel)}
-header.hero{padding:64px 0 40px;background:radial-gradient(900px 400px at 85% -10%,rgba(255,200,61,.18),transparent),radial-gradient(700px 400px at 0% 0%,rgba(56,210,255,.12),transparent)}
-.hero h1{font-size:clamp(34px,6vw,60px);line-height:1.1;margin:0 0 10px;font-weight:800}
-.hero h1 span{color:var(--gold)}
-.hero p.sub{color:var(--muted);font-size:19px;max-width:660px;margin:0 0 22px}
-.chip{display:inline-block;border:1px solid var(--gold);color:var(--gold);border-radius:99px;padding:3px 14px;font-size:14px;margin-bottom:18px}
-.byline{color:var(--text);font-weight:500}
-.byline small{display:block;color:var(--muted);font-weight:400}
-section{padding:46px 0;border-top:1px solid var(--line)}
-h2{font-size:clamp(26px,4vw,36px);margin:0 0 6px;font-weight:700}
-h2 em{font-style:normal;color:var(--gold)}
-.lead{color:var(--muted);margin:0 0 26px;max-width:740px}
+@media(min-width:1100px){
+ .page{display:grid;grid-template-columns:190px minmax(0,1fr);gap:56px;align-items:start}
+ nav{margin:36px 0 0;padding:0;top:28px;border:0;background:none;backdrop-filter:none}
+ nav ul{flex-direction:column;overflow:visible;padding:0;gap:2px;border-right:1px solid var(--line)}
+ nav a{border-radius:0;border:0;border-right:3px solid transparent;margin-right:-1px;padding:8px 16px;font-size:15.5px}
+ nav a:hover,nav a.on{background:none;border-right-color:var(--gold);color:var(--gold)}
+ html{scroll-padding-top:24px}
+}
+section{padding:54px 0;border-top:1px solid var(--line)}
+main section:first-child{border-top:0}
+h2{font-family:var(--serif);font-size:clamp(30px,4.4vw,44px);line-height:1.15;margin:0 0 10px;font-weight:700}
+h3{font-family:var(--serif)}
+.lead{color:var(--muted);margin:0 0 28px;max-width:660px;font-size:18px}
 .grid{display:grid;gap:16px}
-.g3{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
-.g2{grid-template-columns:repeat(auto-fit,minmax(310px,1fr))}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px}
-.card h3{margin:0 0 6px;font-size:20px}
-.src{font-size:13px;color:var(--muted);margin-top:14px}
-.bars{display:flex;align-items:flex-end;gap:18px;height:210px;margin:6px 0 4px}
-.bar{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:100%}
-.bar i{display:block;width:100%;max-width:90px;border-radius:10px 10px 0 0;background:linear-gradient(180deg,var(--cyan),#2b6cf0)}
-.bar:nth-child(3) i{background:linear-gradient(180deg,#ff7aa8,#e8336b)}
-.bar b{font-size:22px;margin-bottom:4px}
-.years{display:flex;gap:18px}.years span{flex:1;text-align:center;color:var(--muted);font-size:14px}
-.stat{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding:12px 0}
-.stat:last-child{border:0}.stat b{font-size:28px;color:var(--gold)}
-.rule{border-top:4px solid var(--gold)}
+.g3{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.g2{grid-template-columns:repeat(auto-fit,minmax(290px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px}
+.card h3{margin:0 0 6px;font-size:22px}
+.card p{margin:0}
+.src{font-size:13.5px;color:var(--muted);margin-top:12px}
+
+/* rules */
+.rule{position:relative;border-top:3px solid var(--gold);overflow:hidden}
 .rule:nth-child(even){border-top-color:var(--cyan)}
-.rule .n{color:var(--muted);font-size:13px;letter-spacing:.04em}
-.rule dt{font-weight:700;color:var(--gold);margin-top:10px}
-.rule:nth-child(even) dt{color:var(--cyan)}
-.rule dd{margin:2px 0 0}
-.traffic{display:grid;gap:10px;margin-top:12px}
-.lt{display:flex;gap:10px;align-items:flex-start;font-size:15px}.lt i{flex:none;width:14px;height:14px;border-radius:50%;margin-top:7px}
-.steps{counter-reset:s;display:grid;gap:14px;padding:0;list-style:none}
-.steps li{counter-increment:s;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px 76px 18px 20px;position:relative}
-.steps li::before{content:counter(s);position:absolute;right:18px;top:16px;width:42px;height:42px;border-radius:50%;background:var(--gold);color:#111;font-weight:800;display:grid;place-items:center;font-size:20px}
-.steps h3{margin:0 0 4px;font-size:19px}
-.steps p{margin:0;color:var(--muted)}
+.rule .n{position:absolute;left:14px;top:-6px;font-family:var(--serif);font-weight:900;font-size:78px;line-height:1;color:rgba(255,255,255,.06)}
+.rule h3{font-size:21px;position:relative}.rule h3 small{display:block;font-family:var(--sans);font-size:13.5px;color:var(--muted);font-weight:400}
+.rule dl{margin:12px 0 0}.rule dt{font-weight:700;color:var(--gold);margin-top:10px;font-size:15px}
+.rule:nth-child(even) dt{color:var(--cyan)}.rule dd{margin:2px 0 0}
+.rule.hl{grid-column:1/-1;border:2px solid var(--gold);border-top-width:4px;background:linear-gradient(135deg,rgba(255,200,61,.13),var(--panel));box-shadow:0 0 0 5px rgba(255,200,61,.07)}
+.rule.hl+.rule{align-self:start}
+@media(min-width:860px){.rule.hl{grid-column:span 2}}
+.warn{margin-top:14px;border-right:4px solid var(--red);background:rgba(255,123,123,.1);border-radius:10px;padding:12px 14px;font-size:16px}
+.warn b{color:#ffb4b4}
+
+/* privacy */
 .ui{direction:ltr;unicode-bidi:isolate;display:inline-block;background:#1b2740;border:1px solid #33466b;border-radius:7px;padding:0 8px;font-family:ui-monospace,Consolas,monospace;font-size:14px;color:var(--gold)}
 kbd{direction:ltr;unicode-bidi:isolate;display:inline-block;background:#1b2740;border:1px solid #33466b;border-bottom-width:3px;border-radius:7px;padding:1px 9px;font-family:ui-monospace,Consolas,monospace;font-size:14px;color:var(--text)}
 .os{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));margin-top:14px}
 .os .card{display:flex;flex-direction:column;gap:10px}
 .keys{direction:ltr;display:flex;gap:6px;align-items:center;flex-wrap:wrap}
-.case{white-space:pre-wrap;direction:rtl;text-align:right;background:#fff;color:#14203a;border-radius:12px;padding:16px 18px;font-size:15.5px;line-height:1.7;border:3px solid var(--gold)}
-.case.dark{background:var(--panel2);color:var(--text);border:1px solid var(--line)}
-.note{border:1px dashed var(--gold);border-radius:14px;padding:14px 16px;background:rgba(255,200,61,.06);color:var(--text);font-size:15px}
-.disc{direction:ltr;text-align:left;font-size:14.5px;color:#c6d2e8}
-.disc ul{padding-left:20px;margin:8px 0}
-footer{padding:36px 0 60px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
-.btn{display:inline-block;background:var(--gold);color:#111;text-decoration:none;font-weight:700;border-radius:12px;padding:10px 18px;margin:4px 0}
-.btn.alt{background:transparent;color:var(--gold);border:1px solid var(--gold)}
 
-.rule.hl{grid-column:1/-1;border:2px solid var(--gold);border-top-width:4px;background:linear-gradient(135deg,rgba(255,200,61,.13),var(--panel));box-shadow:0 0 0 5px rgba(255,200,61,.07)}
-.rule.hl+.rule{align-self:start}
-@media(min-width:860px){.rule.hl{grid-column:span 2}}
-.warn{margin-top:14px;border-right:4px solid var(--red);background:rgba(255,107,107,.1);border-radius:10px;padding:12px 14px;font-size:16px}
-.warn b{color:#ffb4b4}
-.casefile{background:var(--panel);border:1px solid var(--line);border-radius:20px;overflow:hidden}
-.ch{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center;padding:22px 24px;background:linear-gradient(135deg,rgba(255,200,61,.14),rgba(56,210,255,.08));border-bottom:1px solid var(--line)}
-.ch h3{margin:8px 0 0;font-size:26px}
+/* steps */
+.steps{counter-reset:s;display:grid;gap:12px;padding:0;list-style:none;position:relative}
+.steps li{counter-increment:s;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 78px 18px 20px;position:relative}
+.steps li::before{content:counter(s);position:absolute;right:18px;top:16px;width:42px;height:42px;border-radius:50%;background:var(--gold);color:#111;font-weight:800;display:grid;place-items:center;font-size:20px;font-family:var(--serif)}
+.steps h3{margin:0 0 4px;font-size:20px}.steps p{margin:0;color:var(--muted)}
+.note{border:1px dashed var(--gold);border-radius:12px;padding:14px 16px;background:rgba(255,200,61,.06);font-size:15.5px}
+
+/* case file */
+.casefile{background:var(--panel);border:1px solid var(--line);border-radius:18px;overflow:hidden;margin-top:22px}
+.ch{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center;padding:22px 24px;background:linear-gradient(135deg,rgba(255,200,61,.14),rgba(92,214,255,.08));border-bottom:1px solid var(--line)}
+.ch h3{margin:8px 0 2px;font-size:28px}.ch p{margin:0;color:var(--muted);font-size:15.5px}
 .tag{display:inline-block;font-size:13px;border:1px dashed var(--gold);color:var(--gold);border-radius:99px;padding:2px 12px}
 .kv{display:flex;gap:10px}.kv div{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:8px 16px;text-align:center;min-width:84px}
-.kv b{display:block;font-size:24px;color:var(--gold);line-height:1.2}.kv span{font-size:12.5px;color:var(--muted)}
-.cs{padding:22px 24px;border-top:1px solid var(--line)}.cs:first-of-type{border-top:0}
-.cs h4{margin:0 0 10px;font-size:19px;display:flex;align-items:center;gap:10px}
+.kv b{display:block;font-size:24px;color:var(--gold);line-height:1.2;font-family:var(--serif)}.kv span{font-size:12.5px;color:var(--muted)}
+.cs{padding:22px 24px;border-top:1px solid var(--line)}
+.cs h4{margin:0 0 10px;font-size:19px;display:flex;align-items:center;gap:10px;font-family:var(--serif)}
 .cs h4 i{font-style:normal;width:28px;height:28px;border-radius:50%;background:var(--gold);color:#111;display:grid;place-items:center;font-size:15px;font-weight:800;flex:none}
 .cs p{margin:0}
-.cols{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
-.cols>div{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
-.cols h5{margin:0 0 4px;font-size:15px;color:var(--cyan)}.cols p{font-size:15.5px}
-.fu{margin-top:14px;border-right:4px solid var(--cyan);background:rgba(56,210,255,.07);border-radius:10px;padding:12px 14px;font-size:15.5px}
+.cols{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.cols>div{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:13px 15px}
+.cols h5{margin:0 0 5px;font-size:15px;color:var(--cyan)}.cols p,.cols li{font-size:15.5px}
+.cols ul{margin:0;padding:0 18px 0 0}
+.fu{margin-top:14px;border-right:4px solid var(--cyan);background:rgba(92,214,255,.07);border-radius:10px;padding:12px 14px;font-size:15.5px}
 .fu b{display:block;color:var(--cyan);margin-bottom:2px}
 .vit{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}
 .vit>div{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
 .vit span{display:block;font-size:13px;color:var(--muted)}.vit b{font-size:19px}.vit small{display:block;color:var(--muted);font-size:13px;margin-top:2px}
 .labs{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
-.lab{background:var(--panel2);border:1px solid var(--line);border-radius:14px;padding:14px 16px;border-top:4px solid var(--green)}
+.lab{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:14px 16px;border-top:4px solid var(--green)}
 .lab.hi{border-top-color:var(--red)}
 .lh{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;font-weight:700}
-.lh em{font-style:normal;font-size:12.5px;font-weight:500;border-radius:99px;padding:1px 10px;background:rgba(74,222,128,.15);color:var(--green)}
-.lab.hi .lh em{background:rgba(255,107,107,.15);color:#ff9b9b}
+.lh em{font-style:normal;font-size:12.5px;font-weight:500;border-radius:99px;padding:1px 10px;background:rgba(82,217,138,.15);color:var(--green)}
+.lab.hi .lh em{background:rgba(255,123,123,.15);color:#ff9b9b}
 .lab .row{display:flex;justify-content:space-between;gap:10px;padding:4px 0;border-bottom:1px dashed var(--line);font-size:15.5px}
-.lab .row b{color:var(--text);white-space:nowrap}
+.lab .row b{white-space:nowrap}
 .lab small{display:block;margin-top:8px;color:var(--muted);font-size:13px}
-@media(max-width:600px){.ch h3{font-size:22px}.cs{padding:18px 16px}}
-@media(max-width:600px){body{font-size:16px}.steps li{padding-right:68px}}
+.copybar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:16px}
+button.btn{border:0;cursor:pointer;font-family:inherit}
+#copyok{color:var(--green);font-size:15px;min-height:1em}
+
+footer{padding:40px 0 70px;border-top:1px solid var(--line);color:var(--muted);font-size:14.5px}
+footer p{margin:0 0 10px;max-width:760px}
+footer .credit{color:var(--text);font-size:16px}
+#top{position:fixed;left:18px;bottom:18px;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--panel);color:var(--gold);font-size:20px;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .2s;z-index:30}
+#top.show{opacity:1;pointer-events:auto}
+@media(max-width:600px){body{font-size:16px}.steps li{padding-right:68px}.ch h3{font-size:23px}.cs{padding:18px 16px}.hero .in{padding-top:90px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+@media print{body{background:#fff;color:#000}.hero canvas,nav,#top,#progress,.cta{display:none}.card,.casefile,.cs,.lab{background:#fff;border-color:#bbb;color:#000}.hero::after{display:none}.hero{min-height:0;background:#fff}.hero .in{padding:20px 0}}
 </style>
 </head>
 <body>
-<nav><div class='wrap'>
-<a href='#limits'>מגבלות</a><a href='#rules'>5 החוקים</a><a href='#privacy'>אנונימיזציה</a><a href='#femobesity'>.femobesity</a><a href='#examples'>שיחה לדוגמה</a><a href='#disclosures'>גילוי נאות</a></div>
-</nav>
+<a class='skip' href='#main'>דלגו לתוכן</a>
+<div id='progress' aria-hidden='true'></div>
 
-<header class='hero'><div class='wrap'>
+<header class='hero'>
+<canvas id='fx' aria-hidden='true'></canvas>
+<div class='in'>
 <span class='chip'>אתר עזר</span>
-<h1><span>AI</span> בפעולה<br>במרפאה וביום יום</h1>
-<p class='sub'>החוקים לשימוש בטוח ב-AI, הגנה על פרטיות המטופלים, והוראות העבודה עם OpenEvidence ו-.femobesity, במקום אחד שאפשר לחזור אליו בקליניקה.</p>
+<h1>AI בפעולה<br>במרפאה וביום יום</h1>
+<p class='sub'>החוקים לשימוש בטוח ב-AI, הגנה על פרטיות המטופלים, והוראות העבודה עם OpenEvidence, וגם הכלי <span class='ui'>.femobesity</span>, במקום אחד שאפשר לחזור אליו בקליניקה.</p>
+<div class='cta'>
+<a class='btn' href='https://www.openevidence.com/' target='_blank' rel='noopener'>לפתיחת OpenEvidence</a>
+<a class='btn alt' href='#femobesity'>איך מגיעים ל-<bdi dir='ltr'>.femobesity</bdi></a>
+</div>
 <div class='byline'>ד״ר רועי שליט<small>מנהל מכון סוכרת נתניה · מנהל תחום AI וחדשנות באגודה האנדוקרינית הישראלית</small></div>
-</div></header>
+</div>
+</header>
 
-<main class='wrap'>
+<div class='page'>
+<nav aria-label='ניווט באתר'><ul>
+<li><a href='#limits'>מגבלות</a></li><li><a href='#rules'>5 החוקים</a></li><li><a href='#privacy'>אנונימיזציה</a></li><li><a href='#femobesity'><bdi dir='ltr'>.femobesity</bdi></a></li><li><a href='#examples'>שיחה לדוגמה</a></li><li><a href='#disclosures'>גילוי נאות</a></li>
+</ul></nav>
+
+<main id='main'>
 
 <section id='limits'>
-<h2>חסרונות <em>שחשוב להבין</em></h2>
+<h2>חסרונות שחשוב להבין</h2>
 <p class='lead'>שני נושאים שחשוב להכיר לפני החוקים: הזיות, והסיבה שאי אפשר פשוט ״לשאול כמו שרוצים״.</p>
 <div class='grid g2'>
 <div class='card'><h3>הזיות (Hallucinations)</h3><p>מודלי שפה מייצרים טקסט סביר-לכאורה, וייתכן שהוא שגוי או מומצא, כולל ציטוטים ומקורות.</p></div>
@@ -131,20 +168,20 @@ footer{padding:36px 0 60px;border-top:1px solid var(--line);color:var(--muted);f
 </section>
 
 <section id='rules'>
-<h2>5 החוקים לשימוש <em>בטוח</em></h2>
+<h2>5 החוקים לשימוש בטוח</h2>
 <p class='lead'>חמישה חוקים שנועדו להגן על המטופלים ועל הרופא. כל חוק מורכב מעיקרון ומפרוטוקול.</p>
 <div class='grid g3'>
-<article class='card rule'><div class='n'>חוק 1</div><h3>אימות מוחלט <small>(Zero Trust)</small></h3><dl><dt>עיקרון</dt><dd>כל פלט הוא טיוטה, לא אמת.</dd><dt>פרוטוקול</dt><dd>מאמתים נתונים קריטיים (מינון, ICD) במקור מוסמך כמו UpToDate. אין לקבל ציטוטים כפי שהם.</dd></dl></article>
-<article class='card rule'><div class='n'>חוק 2</div><h3>הקשר מפורש <small>(Explicit Context)</small></h3><dl><dt>עיקרון</dt><dd>המודל אינו מכיר את ההקשר הקליני.</dd><dt>פרוטוקול</dt><dd>מנסחים כל בקשה בנוסחת תפקיד–משימה–אילוץ, ומבקשים להציג אבחנות תוך תיעדוף.</dd></dl></article>
-<article class='card rule'><div class='n'>חוק 3</div><h3>היגיינת מידע <small>(Privacy First)</small></h3><dl><dt>עיקרון</dt><dd>מודל ציבורי הוא מרחב ציבורי.</dd><dt>פרוטוקול</dt><dd>לא מקלידים פרטים מזהים. מידע רגיש מוזן רק למודלים ארגוניים.</dd></dl></article>
-<article class='card rule hl'><div class='n'>חוק 4</div><h3>תיחום גבולות <small>(Scope Limitation)</small></h3><dl><dt>עיקרון</dt><dd>מודל שפה נועד לעיבוד מידע, לא לקבלת החלטות.</dd><dt>פרוטוקול</dt><dd>משתמשים בו לסיכום ולארגון מידע, ולהצעת אבחנה מבדלת לשיקול הרופא.</dd></dl>
+<article class='card rule'><div class='n'>1</div><h3>אימות מוחלט <small>Zero Trust</small></h3><dl><dt>עיקרון</dt><dd>כל פלט הוא טיוטה, לא אמת.</dd><dt>פרוטוקול</dt><dd>מאמתים נתונים קריטיים (מינון, ICD) במקור מוסמך כמו UpToDate. אין לקבל ציטוטים כפי שהם.</dd></dl></article>
+<article class='card rule'><div class='n'>2</div><h3>הקשר מפורש <small>Explicit Context</small></h3><dl><dt>עיקרון</dt><dd>המודל אינו מכיר את ההקשר הקליני.</dd><dt>פרוטוקול</dt><dd>מנסחים כל בקשה בנוסחת תפקיד–משימה–אילוץ, ומבקשים להציג אבחנות תוך תיעדוף.</dd></dl></article>
+<article class='card rule'><div class='n'>3</div><h3>היגיינת מידע <small>Privacy First</small></h3><dl><dt>עיקרון</dt><dd>מודל ציבורי הוא מרחב ציבורי.</dd><dt>פרוטוקול</dt><dd>לא מקלידים פרטים מזהים. מידע רגיש מוזן רק למודלים ארגוניים.</dd></dl></article>
+<article class='card rule hl'><div class='n'>4</div><h3>תיחום גבולות <small>Scope Limitation</small></h3><dl><dt>עיקרון</dt><dd>מודל שפה נועד לעיבוד מידע, לא לקבלת החלטות.</dd><dt>פרוטוקול</dt><dd>משתמשים בו לסיכום ולארגון מידע, ולהצעת אבחנה מבדלת לשיקול הרופא.</dd></dl>
 <div class='warn'><b>שימו לב:</b> הוא אינו מיועד לקבלת או לסיכום של החלטות כבדות משקל, כמו <b>מינון תרופות</b> או <b>Staging</b>. החלטות כאלה מתקבלות על ידי הרופא, על בסיס מקורות וכלי חישוב מוסמכים.</div></article>
-<article class='card rule'><div class='n'>חוק 5</div><h3>כפיית ביקורתיות <small>(Bias Check)</small></h3><dl><dt>עיקרון</dt><dd>המודל משקף הטיות שבנתוני האימון.</dd><dt>פרוטוקול</dt><dd>מסירים מגדר ומוצא מהשאלה כשהם אינם רלוונטיים, ודורשים חשיבה לוגית מפורשת (״למה?״).</dd></dl></article>
+<article class='card rule'><div class='n'>5</div><h3>כפיית ביקורתיות <small>Bias Check</small></h3><dl><dt>עיקרון</dt><dd>המודל משקף הטיות שבנתוני האימון.</dd><dt>פרוטוקול</dt><dd>מסירים מגדר ומוצא מהשאלה כשהם אינם רלוונטיים, ודורשים חשיבה לוגית מפורשת (״למה?״).</dd></dl></article>
 </div>
 </section>
 
 <section id='privacy'>
-<h2>איך מעתיקים מידע <em>בצורה אנונימית</em></h2>
+<h2>איך מעתיקים מידע בצורה אנונימית</h2>
 <p class='lead'>זה השלב החשוב ביותר: להעתיק נתוני מעבדה, תיק רפואי וצילומי מסך מבלי לחשוף את זהות המטופל.</p>
 <div class='grid g2'>
 <div class='card'><h3>אנמנזה</h3><p>אפשר להעתיק ישירות מהקליקס. בכל מקרה יש לוודא חיסיון לפני ההדבקה.</p></div>
@@ -157,77 +194,75 @@ footer{padding:36px 0 60px;border-top:1px solid var(--line);color:var(--muted);f
 <div class='card' style='margin-top:16px'>
 <h3>הפיכת צילום מסך לטקסט</h3>
 <p>אחרי הגזירה מדביקים את התמונה ל-ChatGPT או ל-Gemini יחד עם פרומפט שהופך צילומי מסך לטקסט שאפשר להעתיק. ב-Gemini זמין Gem מוכן למטרה זו.</p>
-<a class='btn alt' href='https://gemini.google.com/gem/1DNTxwnmM_QZWnf1IaJHiZwQOZ8yYATFg?usp=sharing' target='_blank' rel='noopener'>פתיחת ה-Gem</a>
-<p class='src' style='margin-top:6px'>זהו כלי חיצוני. יש לוודא שהתמונה אינה כוללת פרטים מזהים לפני ההעלאה.</p>
+<p style='margin-top:12px'><a class='btn alt' href='https://gemini.google.com/gem/1DNTxwnmM_QZWnf1IaJHiZwQOZ8yYATFg?usp=sharing' target='_blank' rel='noopener' style='background:transparent'>פתיחת ה-Gem</a></p>
+<p class='src'>זהו כלי חיצוני. יש לוודא שהתמונה אינה כוללת פרטים מזהים לפני ההעלאה.</p>
 </div>
 </section>
 
 <section id='femobesity'>
-<h2>איך מגיעים ל-<em>.femobesity</em></h2>
+<h2>איך מגיעים ל-<bdi dir='ltr'>.femobesity</bdi></h2>
 <p class='lead'>שבעה צעדים, עם שמות הכפתורים כפי שהם מופיעים בממשק.</p>
-
-<div class='grid g2' style='margin-bottom:22px'>
-<div class='card'><h3>מהו Dotflow</h3><p>Dotflow הוא מנגנון ב-OpenEvidence ששומר הוראות לשימוש חוזר. מפעילים אותו בשיחה בסימון נקודה לפני שמו, למשל <span class='ui'>.femobesity</span>, והוא קובע מראש איך תיראה התשובה, בלי שתצטרכו לנסח את הבקשה מחדש בכל פעם.</p></div>
-<div class='card'><h3>למה נועד .femobesity</h3><p>כשמגיע למרפאה מטופל או מטופלת עם עודף משקל או השמנה, מזינים את סיפור המקרה: אנמנזה, תרופות ובדיקות. הכלי מחזיר בעברית תשובה קלינית מסודרת, שנשענת על חיפוש בספרות עדכנית, כולל הערכה של רמת הראיות וסיכום קצר. הוא מיועד לעזור לכם לארגן את המקרה ולשקול את הצעדים הבאים, ולא להחליף את שיקול הדעת שלכם.</p></div>
+<div class='grid g2' style='margin-bottom:20px'>
+<div class='card'><h3>מהו Dotflow</h3><p>Dotflow הוא מנגנון ב-OpenEvidence ששומר הוראות לשימוש חוזר. מפעילים אותו בשיחה בסימון נקודה לפני שמו, למשל <span class='ui'><bdi dir='ltr'>.femobesity</bdi></span>, והוא קובע מראש איך תיראה התשובה, בלי שתצטרכו לנסח את הבקשה מחדש בכל פעם.</p></div>
+<div class='card'><h3>למה נועד <bdi dir='ltr'>.femobesity</bdi></h3><p>הכלי מיועד לעבודה עם נשים בגיל המעבר שמתמודדות עם מחלת ההשמנה. מזינים את סיפור המקרה: אנמנזה, תרופות ובדיקות. הוא מחזיר בעברית תשובה קלינית מסודרת, שנשענת על חיפוש בספרות עדכנית, כולל הערכה של רמת הראיות וסיכום קצר. הוא נועד לעזור לארגן את המקרה ולשקול את הצעדים הבאים, ולא להחליף את שיקול הדעת של הרופא.</p></div>
 </div>
 <div class='note' style='margin-bottom:22px'>זהו Dotflow מהקהילה (Community Dotflows) ולא כלי רשמי של OpenEvidence. מומלץ לעיין בהוראות שלו לפני השימוש הראשון, ולבדוק את התוצר לפי חוק 1.</div>
-
 <ol class='steps'>
 <li><h3>נכנסים ל-OpenEvidence</h3><p>פותחים את האתר ומתחברים לחשבון שלכם.</p><p style='margin-top:10px'><a class='btn' href='https://www.openevidence.com/' target='_blank' rel='noopener'>לפתיחת OpenEvidence</a></p></li>
 <li><h3>פותחים את Dotflows</h3><p>בתפריט השמאלי לוחצים על <span class='ui'>Tools</span> ואז בוחרים <span class='ui'>Dotflows</span>.</p></li>
-<li><h3>מחפשים ב-Community Dotflows</h3><p>לוחצים על הלשונית <span class='ui'>Community Dotflows</span>, מקלידים בחיפוש <span class='ui'>Obesity</span> ובוחרים מהרשימה את <span class='ui'>.femobesity</span>.</p></li>
+<li><h3>מחפשים ב-Community Dotflows</h3><p>לוחצים על הלשונית <span class='ui'>Community Dotflows</span>, מקלידים בחיפוש <span class='ui'>Obesity</span> ובוחרים מהרשימה את <span class='ui'><bdi dir='ltr'>.femobesity</bdi></span>.</p></li>
 <li><h3>מוסיפים אותו לרשימה שלכם</h3><p>בחלון הפרטים של ה-Dotflow לוחצים על <span class='ui'>Add to my dotflows</span> כדי לשמור אותו בחשבון.</p></li>
 <li><h3>פותחים שיחה חדשה</h3><p>לוחצים על <span class='ui'>New Conversation</span>.</p></li>
-<li><h3>מפעילים את ה-Dotflow בשיחה</h3><p>בתיבת השאלה לוחצים על סימן הפלוס <span class='ui'>+</span>, בוחרים <span class='ui'>Dotflows</span> ואז <span class='ui'>.femobesity</span> מהרשימה.</p></li>
+<li><h3>מפעילים את ה-Dotflow בשיחה</h3><p>בתיבת השאלה לוחצים על סימן הפלוס <span class='ui'>+</span>, בוחרים <span class='ui'>Dotflows</span> ואז <span class='ui'><bdi dir='ltr'>.femobesity</bdi></span> מהרשימה.</p></li>
 <li><h3>מזינים את סיפור המקרה</h3><p>כותבים או מדביקים את סיפור המקרה, כולל אנמנזה, בדיקות ומעבדה, ושולחים. הסירו קודם פרטים מזהים (חוק 3). שיחה לדוגמה בסעיף הבא.</p></li>
 </ol>
 <p class='src'>הממשק של OpenEvidence עשוי להשתנות עם הזמן.</p>
 </section>
 
 <section id='examples'>
-<h2>שיחה <em>לדוגמה</em></h2>
-<p class='lead'>כך נראית שיחה עם <span class='ui'>.femobesity</span> על מקרה לדוגמה. אפשר לפתוח את השיחה המלאה ב-OpenEvidence, או לקרוא כאן את סיפור המקרה שהוזן.</p>
-<p><a class='btn' href='https://www.openevidence.com/ask/a7dcbe3a-6e30-41fc-b1d2-a2ecc02b71ae' target='_blank' rel='noopener'>לשיחה לדוגמה ב-OpenEvidence</a></p>
+<h2>שיחה לדוגמה</h2>
+<p class='lead'>כך נראית שיחה עם <span class='ui'><bdi dir='ltr'>.femobesity</bdi></span> על מקרה לדוגמה. אפשר לפתוח את השיחה המלאה ב-OpenEvidence, או לקרוא כאן את סיפור המקרה שהוזן ולהעתיק אותו.</p>
+<div class='cta' style='margin-bottom:0'>
+<a class='btn' href='https://www.openevidence.com/ask/a7dcbe3a-6e30-41fc-b1d2-a2ecc02b71ae' target='_blank' rel='noopener'>לשיחה לדוגמה ב-OpenEvidence</a>
+</div>
 
 <article class='casefile'>
 <header class='ch'>
-<div><span class='tag'>מקרה לדוגמה, לא נתוני אמת</span><h3>סיפור המקרה</h3></div>
+<div><span class='tag'>מקרה לדוגמה, לא נתוני אמת</span><h3>סיפור המקרה</h3><p>אישה בת 48, נשואה + 4, עורכת דין במקצוע</p></div>
 <div class='kv'><div><b>48</b><span>גיל</span></div><div><b>28.6</b><span>BMI ק״ג/מ״ר</span></div><div><b>75</b><span>משקל, ק״ג</span></div></div>
 </header>
 
-<div class='cs'><h4><i>1</i>רקע רפואי</h4>
-<p>בריאה בדרך כלל. סוכרת הריונית בשני ההריונות האחרונים (האחרון לפני 9 שנים).</p></div>
+<div class='cs'><h4><i>1</i>רקע רפואי כללי</h4>
+<p>בריאה בדרך כלל. היסטוריה של סוכרת הריונית בשני ההריונות האחרונים (אחרונה לפני 9 שנים).</p></div>
 
-<div class='cs'><h4><i>2</i>תלונה עיקרית</h4>
+<div class='cs'><h4><i>2</i>תלונה עיקרית (Chief Complaint)</h4>
 <p>פנייה עצמית בבקשה לבירור רמות קורטיזול ותפקודי בלוטת התריס, עקב תחושה ש״אינה עצמה״, דחק כרוני קשה ועלייה בלתי מסברת במשקל.</p></div>
 
-<div class='cs'><h4><i>3</i>תולדות המחלה הנוכחית</h4>
+<div class='cs'><h4><i>3</i>תולדות המחלה הנוכחית (Anamnesis / HPI)</h4>
 <div class='cols'>
-<div><h5>משקל ופיזור שומן</h5><p>עלייה במשקל עם הצטברות שומן מרכזית בולטת באזור הבטן (״לא הייתה לי קודם הבטן הזו״).</p></div>
-<div><h5>נוירו-פסיכיאטרי ומתח</h5><p>דחק כרוני קשה (דאגה לבנה בלבנון), הפרעות שינה קשות (אי-שקט, יקיצות מרובות), פלפיטציות, עצבנות רבה ואכילה רגשית.</p></div>
-<div><h5>שינויים בווסת</h5><p>התקצרות המחזור מ-30 יום ל-3 שבועות, עם דימומים כבדים.</p></div>
-<div><h5>PMS</h5><p>החמרה בעצבנות טרום-ווסתית, כאבי ראש ובצקות או נפיחות.</p></div>
-<div><h5>גניטואורינרי (GSM)</h5><p>יובש נרתיקי ושני אירועי דלקת בדרכי השתן בשנה החולפת.</p></div>
-<div><h5>מיניות</h5><p>ירידה בחשק המיני (ליבידו).</p></div>
+<div><h5>עלייה במשקל ושינוי פיזור שומן</h5><p>מדווחת על עלייה במשקל עם הצטברות שומן מרכזית בולטת באזור הבטן (״לא הייתה לי קודם הבטן הזו״).</p></div>
+<div><h5>תסמינים נוירו-פסיכיאטריים ומתח</h5><p>דחק כרוני קשה (דאגה לבנה בלבנון), הפרעות שינה קשות (אי-שקט, יקיצות מרובות), דפיקות לב (פלפיטציות), עצבנות רבה ואכילה רגשית.</p></div>
+<div><h5>תסמינים הורמונליים ופרי-מנופאוזליים</h5><ul>
+<li><b>דפוס הווסת:</b> התקצרות המחזור מ-30 יום ל-3 שבועות עם דימומים כבדים.</li>
+<li><b>PMS:</b> החמרה בעצבנות מוגברת טרום-ווסתית, כאבי ראש ובצקות/נפיחות.</li>
+<li><b>GSM:</b> יובש נרתיקי ו-2 אירועים של דלקת בדרכי השתן בשנה החולפת.</li>
+<li>ירידה בחשק המיני (ליבידו).</li></ul></div>
 </div>
-<div class='fu'><b>ביקור מעקב אחרי 3 חודשים</b>
-תחת טיפול ב-SSRI (פריידמה) ושינוי אורח חיים (תזונה ופעילות גופנית) דווחה ירידה קלה בעצבנות ובבכי. במקביל נצבר קילוגרם נוסף במשקל, ונמשכו אי-שקט בשינה, כאבי ראש, כאבי שרירים וירידה בליבידו.</div></div>
+<div class='fu'><b>תגובה לטיפול תרופתי קודם (ביקור מעקב כעבור 3 חודשים)</b>
+תחת טיפול ב-SSRI (פריידמה) ושינוי אורח חיים (תזונה ופעילות גופנית), דיווחה על ירידה קלה בעצבנות ובבכי, אך צברה 1 ק״ג נוסף במשקל, וסבלה מאי-שקט בשינה, כאבי ראש, כאבי שרירים וירידה בליבידו.</div></div>
 
-<div class='cs'><h4><i>4</i>מדדים ובדיקה גופנית</h4>
+<div class='cs'><h4><i>4</i>מדדים ובדיקה גופנית (Vitals &amp; Physical Exam)</h4>
 <div class='vit'>
 <div><span>גובה</span><b>162 ס״מ</b></div>
-<div><span>משקל</span><b>75 ק״ג</b><small>עלייה של 8 ק״ג מ-67 ק״ג שנתיים קודם</small></div>
-<div><span>BMI</span><b>28.6 ק״ג/מ״ר</b><small>משקל עודף; עלייה מ-25.5</small></div>
+<div><span>משקל נוכחי</span><b>75 ק״ג</b><small>עלייה של 8 ק״ג ממשקל של 67 ק״ג שנתיים קודם לכן</small></div>
+<div><span>BMI נוכחי</span><b>28.6 ק״ג/מ״ר</b><small>משקל עודף; עלייה מ-BMI של 25.5 ק״ג/מ״ר</small></div>
 <div><span>לחץ דם</span><b>129/82 מ״מ כספית</b></div>
 </div>
-<p style='margin-top:10px'>בדיקת לב: תקינה. סימנים קליניים לקושינג: שלילי.</p></div>
+<p style='margin-top:12px'><b>בדיקת לב:</b> תקינה. <b>סימנים קליניים לקושינג:</b> שלילי (אין עדות קלינית לקושינג).</p></div>
 
-<div class='cs'><h4><i>5</i>בדיקות מעבדה</h4>
+<div class='cs'><h4><i>5</i>בדיקות מעבדה (Laboratory Results)</h4>
 <div class='labs'>
-<div class='lab ok'><div class='lh'><span>ציר אדרנלי</span><em>תקין</em></div>
-<div class='row'><span>קורטיזול בסרום (08:00)</span><b dir='ltr'>12.4 µg/dL</b></div>
-<small>טווח ייחוס 5–25 µg/dL. שולל היפרקורטיזוליזם/קושינג.</small></div>
-<div class='lab ok'><div class='lh'><span>בלוטת התריס</span><em>תקין</em></div>
+<div class='lab ok'><div class='lh'><span>תפקודי בלוטת התריס</span><em>תקין</em></div>
 <div class='row'><span>TSH</span><b dir='ltr'>1.62 mIU/L</b></div>
 <div class='row'><span>FT4</span><b dir='ltr'>1.1 ng/dL</b></div></div>
 <div class='lab hi'><div class='lh'><span>פרופיל גליקמי</span><em>מוגבר</em></div>
@@ -247,51 +282,104 @@ footer{padding:36px 0 60px;border-top:1px solid var(--line);color:var(--muted);f
 </div></div>
 </article>
 
-<div class='card' style='margin-top:20px'>
-<h3>דוגמה לנוסח קצר להזנה</h3>
-<p>אפשר גם להזין תיאור מקוצר, כל עוד הוא כולל גיל, מחלות רקע, תרופות ובדיקות.</p>
-<div class='case dark'>סיפור מקרה:
-אישה בת 48, BMI 34, עודף משקל, מתלוננת על עלייה במשקל, גלי חום, עייפות והפרעות שינה.
-
-אנמנזה: כנ״ל, תרופות, מחלות רקע, היסטוריה גינקולוגית, אורח חיים וכו׳.
-
-בדיקות מעבדה:
-HbA1c 5.8%
-TSH 2.3 mIU/L
-LH 28 IU/L
-FSH 46 IU/L
-Estradiol 22 pg/mL
-Lipid profile: LDL 130, HDL 48, TG 180
-ALT 42 U/L</div>
+<div class='copybar'>
+<button class='btn' id='copy' type='button'>העתקת סיפור המקרה</button><span id='copyok' role='status' aria-live='polite'></span>
 </div>
-</section>
-
-<section id='community'>
-<h2>להתנסות <em>ולהצטרף</em></h2>
-<div class='card'><p style='margin:0'>אתם מוזמנים להצטרף לקבוצת הוואטסאפ השקטה ולהתחיל להתנסות. הדגש הוא על כלים פרקטיים שאפשר להשתמש בהם בקליניקה כבר למחרת.</p></div>
+<p class='src'>שמה של המטופלת הושמט בכוונה, בהתאם לחוק 3 (היגיינת מידע): לא מזינים לכלי AI פרטים מזהים.</p>
 </section>
 
 <section id='disclosures'>
 <h2>גילוי נאות</h2>
-<div class='note' style='margin-bottom:16px'>התוכן בחסות חברת אלי לילי ומיועד לצוות הרפואי בלבד. שמות המשתתפים במפגש נשמרים אצל אלי-לילי ישראל בע״מ וחברות קשורות אליה לצורך תיעוד האירוע ותפעולו.</div>
-<div class='card disc'>
-<b>Disclosures (as presented)</b>
-<p>Consultant to: AstraZeneca, Eli Lilly, Boehringer Ingelheim.<br>Speaker Service to: AstraZeneca, Boehringer Ingelheim, Medtronic, Novo Nordisk, Eli Lilly.<br>Research Services from: Medtronic.</p>
-<ul>
-<li>We remind you that, during this meeting, the topics covered will be exclusively within the framework of the product's indication, in accordance with local Legislative Decree and our Global procedure.</li>
-<li>We anticipate that any questions relating to matters outside the product SPC indication may be addressed in 1:1 meetings with the speakers, separately and at the end of the meeting, (with medical Lilly person) but will not be discussed during the plenary session.</li>
-</ul></div>
+<div class='note'>התוכן בחסות חברת אלי לילי ומיועד לצוות הרפואי בלבד. שמות המשתתפים במפגש נשמרים אצל אלי-לילי ישראל בע״מ וחברות קשורות אליה לצורך תיעוד האירוע ותפעולו.</div>
 </section>
 </main>
+</div>
 
-<footer><div class='wrap'>
-אתר זה הוא עזר לימודי, ואינו מהווה ייעוץ רפואי או תחליף לשיקול דעת קליני. אין להזין בכלי AI מידע מזהה של מטופלים. עודכן ב-11.10.2026.
+<footer><div class='page' style='display:block'>
+<p class='credit'>האתר נוצר על ידי ד״ר רועי שליט, <a href='mailto:dr.rshalit@gmail.com'>dr.rshalit@gmail.com</a>, לצורך לימודי בלבד.</p>
+<p>האתר הוא עזר לימודי, ואינו מהווה ייעוץ רפואי או תחליף לשיקול דעת קליני. אין להזין בכלי AI מידע מזהה של מטופלים. עודכן ב-11.10.2026.</p>
 </div></footer>
+<button id='top' type='button' aria-label='חזרה לראש העמוד'>↑</button>
+
+<script type='text/plain' id='casetxt'>מקרה לדוגמה, לא נתוני אמת
+אישה בת 48, נשואה + 4, עורכת דין במקצוע.
+
+רקע רפואי כללי: בריאה בדרך כלל. היסטוריה של סוכרת הריונית בשני ההריונות האחרונים (אחרונה לפני 9 שנים).
+
+1. תלונה עיקרית (Chief Complaint)
+פנייה עצמית בבקשה לבירור רמות קורטיזול ותפקודי בלוטת התריס, עקב תחושה ש"אינה עצמה", דחק כרוני קשה ועלייה בלתי מסברת במשקל.
+
+2. תולדות המחלה הנוכחית (Anamnesis / HPI)
+עלייה במשקל ושינוי פיזור שומן: מדווחת על עלייה במשקל עם הצטברות שומן מרכזית בולטת באזור הבטן ("לא הייתה לי קודם הבטן הזו").
+תסמינים נוירו-פסיכיאטריים ומתח: דחק כרוני קשה (דאגה לבנה בלבנון), הפרעות שינה קשות (אי-שקט, יקיצות מרובות), דפיקות לב (פלפיטציות), עצבנות רבה ואכילה רגשית.
+תסמינים הורמונליים ופרי-מנופאוזליים:
+- שינויים בדפוס הווסת: התקצרות המחזור מ-30 יום ל-3 שבועות עם דימומים כבדים.
+- החמרה בתסמני PMS: עצבנות מוגברת טרום-ווסתית, כאבי ראש ובצקות/נפיחות.
+- תסמינים גניטואורינריים (GSM): יובש נרתיקי ו-2 אירועים של דלקת בדרכי השתן בשנה החולפת.
+- ירידה בחשק המיני (ליבידו).
+תגובה לטיפול תרופתי קודם (ביקור מעקב כעבור 3 חודשים): תחת טיפול ב-SSRI (פריידמה) ושינוי אורח חיים (תזונה ופעילות גופנית), דיווחה על ירידה קלה בעצבנות ובבכי, אך צברה 1 ק"ג נוסף במשקל, וסבלה מאי-שקט בשינה, כאבי ראש, כאבי שרירים וירידה בליבידו.
+
+3. מדדים ובדיקה גופנית (Vitals & Physical Exam)
+גובה: 162 ס"מ.
+משקל נוכחי: 75 ק"ג (עלייה של 8 ק"ג ממשקל של 67 ק"ג שנתיים קודם לכן).
+BMI נוכחי: 28.6 ק"ג/מ"ר (משקל עודף; עלייה מ-BMI של 25.5 ק"ג/מ"ר).
+לחץ דם: 129/82 מ"מ כספית.
+בדיקת לב: תקינה.
+סימנים קליניים לקושינג: שלילי (אין עדות קלינית לקושינג).
+
+4. בדיקות מעבדה (Laboratory Results)
+תפקודי בלוטת התריס: TSH: 1.62 mIU/L, FT4: 1.1 ng/dL - תקין.
+פרופיל גליקמי: גלוקוז בצום: 109 mg/dL, HbA1c: 5.9% - מוגבר (טרום-סוכרת / דיסגליקמיה).
+פרופיל ליפידים: כולסטרול כולל: 236 mg/dL, LDL: 168 mg/dL, טריגליצרידים: 170 mg/dL, HDL: 48 mg/dL - מוגבר (דיסליפידמיה אטרוגנית).
+ספירת דם (CBC): המוגלובין: 13.2 g/dL, כדוריות לבנות: 6.1 K/µL, טרומבוציטים: 258 K/µL - תקין.</script>
 
 <script>
 (function(){
+  /* nav highlight */
   var links=[].slice.call(document.querySelectorAll('nav a')),secs=links.map(function(a){return document.querySelector(a.getAttribute('href'))});
-  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(l){l.classList.toggle('on',l.getAttribute('href')==='#'+e.target.id)})}})},{rootMargin:'-40% 0px -55% 0px'});secs.forEach(function(s){if(s)io.observe(s)})}
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(l){l.classList.toggle('on',l.getAttribute('href')==='#'+e.target.id)})}})},{rootMargin:'-35% 0px -60% 0px'});secs.forEach(function(s){if(s)io.observe(s)})}
+  /* reading progress + back to top */
+  var bar=document.getElementById('progress'),top=document.getElementById('top');
+  function onScroll(){var h=document.documentElement,max=h.scrollHeight-h.clientHeight;bar.style.width=(max>0?h.scrollTop/max*100:0)+'%';top.classList.toggle('show',h.scrollTop>900)}
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  top.addEventListener('click',function(){window.scrollTo({top:0})});
+  /* copy case */
+  var btn=document.getElementById('copy'),ok=document.getElementById('copyok');
+  btn.addEventListener('click',function(){
+    var t=document.getElementById('casetxt').textContent.trim();
+    function done(m){ok.textContent=m;setTimeout(function(){ok.textContent=''},3000)}
+    function fb(){var a=document.createElement('textarea');a.value=t;a.style.position='fixed';a.style.opacity='0';document.body.appendChild(a);a.select();try{document.execCommand('copy');done('הועתק. הדביקו בשיחה ב-OpenEvidence.')}catch(e){done('ההעתקה נכשלה. סמנו והעתיקו ידנית.')}document.body.removeChild(a)}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(function(){done('הועתק. הדביקו בשיחה ב-OpenEvidence.')},fb)}else fb();
+  });
+  /* hero shader: soft flowing gradient. Decorative, paused off-screen, static with reduced motion */
+  var cv=document.getElementById('fx');if(!cv)return;
+  var gl=cv.getContext('webgl',{antialias:false,alpha:false,powerPreference:'low-power'});if(!gl){cv.style.display='none';return}
+  var vs='attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}';
+  var fs='precision mediump float;uniform vec2 r;uniform float t;'+
+  'float h(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}'+
+  'float n(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(h(i),h(i+vec2(1,0)),f.x),mix(h(i+vec2(0,1)),h(i+vec2(1,1)),f.x),f.y);}'+
+  'float fbm(vec2 p){float v=0.,a=.5;for(int i=0;i<3;i++){v+=a*n(p);p*=2.02;a*=.5;}return v;}'+
+  'void main(){vec2 uv=gl_FragCoord.xy/r;vec2 q=uv;q.x*=r.x/r.y;'+
+  'float a=fbm(q*1.5+vec2(t*.03,t*.01));float b=fbm(q*2.1+a*1.6+vec2(-t*.025,t*.035));'+
+  'vec3 base=vec3(.027,.043,.078),teal=vec3(.04,.2,.3),gold=vec3(.85,.62,.16);'+
+  'vec3 c=mix(base,teal,smoothstep(.25,.75,b));'+
+  'c+=gold*pow(smoothstep(.5,.95,a*b*1.8),2.)*.3;'+
+  'c=mix(base,c,smoothstep(0.,.5,uv.y));gl_FragColor=vec4(c,1.);}';
+  function sh(type,src){var s=gl.createShader(type);gl.shaderSource(s,src);gl.compileShader(s);return gl.getShaderParameter(s,gl.COMPILE_STATUS)?s:null}
+  var v=sh(gl.VERTEX_SHADER,vs),f=sh(gl.FRAGMENT_SHADER,fs);if(!v||!f){cv.style.display='none';return}
+  var pg=gl.createProgram();gl.attachShader(pg,v);gl.attachShader(pg,f);gl.linkProgram(pg);
+  if(!gl.getProgramParameter(pg,gl.LINK_STATUS)){cv.style.display='none';return}
+  gl.useProgram(pg);
+  var buf=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,buf);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,3,-1,-1,3]),gl.STATIC_DRAW);
+  var loc=gl.getAttribLocation(pg,'p');gl.enableVertexAttribArray(loc);gl.vertexAttribPointer(loc,2,gl.FLOAT,false,0,0);
+  var ur=gl.getUniformLocation(pg,'r'),ut=gl.getUniformLocation(pg,'t');
+  function size(){var s=.5,w=Math.max(2,Math.round(cv.clientWidth*s)),h=Math.max(2,Math.round(cv.clientHeight*s));if(cv.width!==w||cv.height!==h){cv.width=w;cv.height=h}gl.viewport(0,0,cv.width,cv.height);gl.uniform2f(ur,cv.width,cv.height)}
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches,vis=true,last=0,t0=performance.now();
+  function draw(now){size();gl.uniform1f(ut,((now||t0)-t0)/1000+12);gl.drawArrays(gl.TRIANGLES,0,3)}
+  function loop(now){if(vis&&!document.hidden&&now-last>33){last=now;draw(now)}requestAnimationFrame(loop)}
+  draw(t0);
+  window.addEventListener('resize',function(){draw(performance.now())});
+  if(!reduce){if('IntersectionObserver' in window){new IntersectionObserver(function(e){vis=e[0].isIntersecting}).observe(cv)}requestAnimationFrame(loop)}
 })();
 </script>
 </body>
