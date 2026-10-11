@@ -7,8 +7,8 @@
 <meta name='color-scheme' content='dark'>
 <meta name='theme-color' content='#070b14'>
 <link rel='icon' type='image/png' href='assets/favicon.png'>
-<title>AI בפעולה – אתר עזר</title>
-<meta name='description' content='אתר עזר: AI בפעולה במרפאה וביום יום – ד״ר רועי שליט'>
+<title>איך מגיעים ל-femobesity – אתר עזר</title>
+<meta name='description' content='הדרכה קצרה בתמונות: איך מגיעים ל-Dotflow בשם femobesity ב-OpenEvidence – ד״ר רועי שליט'>
 <link rel='preconnect' href='https://fonts.googleapis.com'>
 <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
 <link href='https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800&display=swap' rel='stylesheet'>
@@ -29,7 +29,7 @@ a{color:var(--cyan)}
 .hero::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,11,20,.25) 0%,rgba(7,11,20,.55) 60%,var(--bg) 100%);pointer-events:none}
 .hero .in{position:relative;z-index:2;width:100%;max-width:1180px;margin:0 auto;padding:110px 24px 56px}
 .chip{display:inline-block;border:1px solid rgba(255,200,61,.6);color:var(--gold);border-radius:99px;padding:3px 14px;font-size:14px;margin-bottom:20px;background:rgba(7,11,20,.5)}
-.hero h1{font-family:var(--serif);font-weight:800;font-size:clamp(40px,7.2vw,88px);line-height:1.05;margin:0 0 18px;letter-spacing:-.01em}
+.hero h1{font-family:var(--serif);font-weight:800;font-size:clamp(34px,7.2vw,88px);line-height:1.05;margin:0 0 18px;letter-spacing:-.01em}
 .hero p.sub{color:#c9d6ee;font-size:clamp(17px,2vw,21px);max-width:620px;margin:0 0 28px}
 .cta{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:34px}
 .btn{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:#101010;text-decoration:none;font-weight:700;border-radius:12px;padding:12px 22px;font-size:16px;transition:transform .15s,box-shadow .15s}
@@ -43,14 +43,6 @@ nav{position:sticky;top:0;z-index:20;background:rgba(7,11,20,.94);backdrop-filte
 nav ul{list-style:none;margin:0;padding:10px 0;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}
 nav a{display:block;white-space:nowrap;text-decoration:none;color:var(--muted);font-size:14.5px;padding:6px 13px;border-radius:99px;border:1px solid transparent}
 nav a:hover,nav a.on{color:var(--gold);border-color:var(--line);background:var(--panel)}
-@media(min-width:1100px){
- .page{display:grid;grid-template-columns:190px minmax(0,1fr);gap:56px;align-items:start}
- nav{margin:36px 0 0;padding:0;top:28px;border:0;background:none;backdrop-filter:none}
- nav ul{flex-direction:column;overflow:visible;padding:0;gap:2px;border-right:1px solid var(--line)}
- nav a{border-radius:0;border:0;border-right:3px solid transparent;margin-right:-1px;padding:8px 16px;font-size:15.5px}
- nav a:hover,nav a.on{background:none;border-right-color:var(--gold);color:var(--gold)}
- html{scroll-padding-top:24px}
-}
 section{padding:54px 0;border-top:1px solid var(--line)}
 main section:first-child{border-top:0}
 h2{font-family:var(--serif);font-size:clamp(30px,4.4vw,44px);line-height:1.15;margin:0 0 10px;font-weight:700}
@@ -148,6 +140,24 @@ dialog#lb::backdrop{background:rgba(0,0,0,.85)}
 dialog#lb img{display:block;max-width:min(94vw,760px);max-height:90vh;width:auto;height:auto;border-radius:14px;border:2px solid var(--gold)}
 dialog#lb button{position:absolute;top:-14px;right:-14px;width:40px;height:40px;border-radius:50%;border:0;background:var(--gold);color:#111;font-size:22px;cursor:pointer}
 @media(max-width:820px){.row3{grid-template-columns:1fr;max-width:340px;margin:0 auto}.row4{grid-template-columns:1fr;max-width:380px;margin:0 auto}.phase{padding:16px}}
+
+.warnrow{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:-8px 0 8px}
+.alert{display:flex;gap:14px;align-items:flex-start;background:rgba(255,123,123,.09);border:1px solid rgba(255,123,123,.45);border-radius:16px;padding:18px 20px}
+.alert i{flex:none;width:38px;height:38px;border-radius:50%;background:var(--red);color:#1a0a0a;font-style:normal;font-weight:800;font-size:22px;display:grid;place-items:center;font-family:var(--sans)}
+.alert b{display:block;font-size:19px;margin-bottom:2px}.alert span{color:#e7c9c9;font-size:16px}
+.what{font-size:20px;max-width:680px;margin:0 0 6px}
+.what small{display:block;color:var(--muted);font-size:14px;margin-top:6px}
+.go{text-align:center;background:linear-gradient(135deg,rgba(255,200,61,.12),var(--panel) 65%);border:1px solid rgba(255,200,61,.45);border-radius:22px;padding:34px 22px}
+.go h2{margin-bottom:6px}.go p.lead{margin:0 auto 24px}
+.go .big{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+.go .btn{font-size:19px;padding:15px 28px}
+.go .num{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;background:#111;color:var(--gold);font-size:14px;font-weight:800}
+.go .btn.alt .num{background:var(--gold);color:#111}
+.go .btn{justify-content:center}@media(max-width:600px){.go .btn{width:100%;max-width:330px;font-size:17px;padding:14px 16px;white-space:nowrap}}
+.go .sm{margin-top:18px;font-size:15px}
+.page{display:block;max-width:1000px}
+main section:first-child{border-top:0}
+.hero{min-height:min(70vh,560px)}
 footer{padding:40px 0 70px;border-top:1px solid var(--line);color:var(--muted);font-size:14.5px}
 footer p{margin:0 0 10px;max-width:760px}
 footer .credit{color:var(--text);font-size:16px}
@@ -165,151 +175,52 @@ footer .credit{color:var(--text);font-size:16px}
 <header class='hero'>
 <canvas id='fx' aria-hidden='true'></canvas>
 <div class='in'>
-<span class='chip'>אתר עזר</span>
-<h1>AI בפעולה<br>במרפאה וביום יום</h1>
-<p class='sub'>החוקים לשימוש בטוח ב-AI, הגנה על פרטיות המטופלים, והוראות העבודה עם OpenEvidence, וגם הכלי <span class='ui'>.femobesity</span>, במקום אחד שאפשר לחזור אליו בקליניקה.</p>
+<span class='chip'>אתר עזר לרופאות ולרופאים</span>
+<h1>איך מגיעים ל-femobesity<br>ב-OpenEvidence</h1>
+<p class='sub'>שבעה שלבים קצרים, בתמונות. בלי ידע טכני.</p>
 <div class='cta'>
-<a class='btn' href='https://www.openevidence.com/' target='_blank' rel='noopener'>לפתיחת OpenEvidence</a>
-<a class='btn alt' href='#femobesity'>איך מגיעים ל-<bdi dir='ltr'>.femobesity</bdi></a>
+<a class='btn' href='#steps'>מתחילים</a>
 </div>
-<div class='byline'>ד״ר רועי שליט<small>מנהל מכון סוכרת נתניה · מנהל תחום AI וחדשנות באגודה האנדוקרינית הישראלית</small></div>
+<div class='byline'>ד״ר רועי שליט<small>מנהל תחום AI וחדשנות באגודה האנדוקרינית הישראלית</small></div>
 </div>
 </header>
 
 <div class='page'>
-<nav aria-label='ניווט באתר'><ul>
-<li><a href='#limits'>מגבלות</a></li><li><a href='#rules'>5 החוקים</a></li><li><a href='#privacy'>אנונימיזציה</a></li><li><a href='#femobesity'><bdi dir='ltr'>.femobesity</bdi></a></li><li><a href='#examples'>שיחה לדוגמה</a></li><li><a href='#community'>קבוצת וואטסאפ</a></li><li><a href='#disclosures'>גילוי נאות</a></li>
-</ul></nav>
-
 <main id='main'>
 
-<section id='limits'>
-<h2>חסרונות שחשוב להבין</h2>
-<p class='lead'>שני נושאים שחשוב להכיר לפני החוקים: הזיות, והסיבה שאי אפשר פשוט ״לשאול כמו שרוצים״.</p>
-<div class='grid g2'>
-<div class='card'><h3>הזיות (Hallucinations)</h3><p>מודלי שפה מייצרים טקסט סביר-לכאורה, וייתכן שהוא שגוי או מומצא, כולל ציטוטים ומקורות.</p></div>
-<div class='card'><h3>למה לא פשוט לשאול?</h3><p>אותה שאלה יכולה לקבל תשובות שונות מ-ChatGPT ומ-Gemini. הניסוח, ההקשר ובחירת המודל משפיעים על התשובה, ולכן נדרשים חוקים מוגדרים.</p></div>
+<section id='warn' style='border-top:0;padding-bottom:20px'>
+<div class='warnrow'>
+<div class='alert'><i aria-hidden='true'>!</i><div><b>לא מכניסים מידע מזהה</b><span>בלי שם, תעודת זהות, טלפון או כתובת של המטופל.</span></div></div>
+<div class='alert'><i aria-hidden='true'>!</i><div><b>AI עלול לטעות</b><span>בודקים כל תשובה לפני שמסתמכים עליה.</span></div></div>
 </div>
 </section>
 
-<section id='rules'>
-<h2>5 החוקים לשימוש בטוח</h2>
-<p class='lead'>חמישה חוקים שנועדו להגן על המטופלים ועל הרופא. כל חוק מורכב מעיקרון ומפרוטוקול.</p>
-<div class='grid g3'>
-<article class='card rule'><div class='n'>1</div><h3>אימות מוחלט <small>Zero Trust</small></h3><dl><dt>עיקרון</dt><dd>כל פלט הוא טיוטה, לא אמת.</dd><dt>פרוטוקול</dt><dd>מאמתים נתונים קריטיים (מינון, ICD) במקור מוסמך כמו UpToDate. אין לקבל ציטוטים כפי שהם.</dd></dl></article>
-<article class='card rule'><div class='n'>2</div><h3>הקשר מפורש <small>Explicit Context</small></h3><dl><dt>עיקרון</dt><dd>המודל אינו מכיר את ההקשר הקליני.</dd><dt>פרוטוקול</dt><dd>מנסחים כל בקשה בנוסחת תפקיד–משימה–אילוץ, ומבקשים להציג אבחנות תוך תיעדוף.</dd></dl></article>
-<article class='card rule'><div class='n'>3</div><h3>היגיינת מידע <small>Privacy First</small></h3><dl><dt>עיקרון</dt><dd>מודל ציבורי הוא מרחב ציבורי.</dd><dt>פרוטוקול</dt><dd>לא מקלידים פרטים מזהים. מידע רגיש מוזן רק למודלים ארגוניים.</dd></dl></article>
-<article class='card rule hl'><div class='n'>4</div><h3>תיחום גבולות <small>Scope Limitation</small></h3><dl><dt>עיקרון</dt><dd>מודל שפה נועד לעיבוד מידע, לא לקבלת החלטות.</dd><dt>פרוטוקול</dt><dd>משתמשים בו לסיכום ולארגון מידע, ולהצעת אבחנה מבדלת לשיקול הרופא.</dd></dl>
-<div class='warn'><b>שימו לב:</b> הוא אינו מיועד לקבלת או לסיכום של החלטות כבדות משקל, כמו <b>מינון תרופות</b> או <b>Staging</b>. החלטות כאלה מתקבלות על ידי הרופא, על בסיס מקורות וכלי חישוב מוסמכים.</div></article>
-<article class='card rule'><div class='n'>5</div><h3>כפיית ביקורתיות <small>Bias Check</small></h3><dl><dt>עיקרון</dt><dd>המודל משקף הטיות שבנתוני האימון.</dd><dt>פרוטוקול</dt><dd>מסירים מגדר ומוצא מהשאלה כשהם אינם רלוונטיים, ודורשים חשיבה לוגית מפורשת (״למה?״).</dd></dl></article>
-</div>
-</section>
-
-<section id='privacy'>
-<h2>איך מעתיקים מידע בצורה אנונימית</h2>
-<p class='lead'>זה השלב החשוב ביותר: להעתיק נתוני מעבדה, תיק רפואי וצילומי מסך מבלי לחשוף את זהות המטופל.</p>
-<div class='grid g2'>
-<div class='card'><h3>אנמנזה</h3><p>אפשר להעתיק ישירות מהקליקס. בכל מקרה יש לוודא חיסיון לפני ההדבקה.</p></div>
-<div class='card'><h3>בדיקות מעבדה ומדדים</h3><p>אפשר להעתיק בקלות בעזרת כלי הגזירה של מערכת ההפעלה, תוך הקפדה על חיסיון.</p></div>
-</div>
-<div class='os'>
-<div class='card'><b>Mac</b><div class='keys'><kbd>Shift</kbd>+<kbd>⌘ Command</kbd>+<kbd>5</kbd></div><span class='src' style='margin:0'>פותח סרגל צילום מסך עם אפשרויות לצילום מסך מלא, חלון או אזור נבחר, והקלטת מסך.</span></div>
-<div class='card'><b>Windows</b><div class='keys'><kbd>Shift</kbd>+<kbd>Win</kbd>+<kbd>S</kbd></div><span class='src' style='margin:0'>פותח את כלי הגזירה, כולל בחירת אזור, סימון (Quick Markup) ו-Text Extractor לחילוץ טקסט.</span></div>
-</div>
-<div class='card' style='margin-top:16px'>
-<h3>הפיכת צילום מסך לטקסט</h3>
-<p>אחרי הגזירה מדביקים את התמונה ל-ChatGPT או ל-Gemini יחד עם פרומפט שהופך צילומי מסך לטקסט שאפשר להעתיק. ב-Gemini זמין Gem מוכן למטרה זו.</p>
-<p style='margin-top:12px'><a class='btn alt' href='https://gemini.google.com/gem/1DNTxwnmM_QZWnf1IaJHiZwQOZ8yYATFg?usp=sharing' target='_blank' rel='noopener' style='background:transparent'>פתיחת ה-Gem</a></p>
-<p class='src'>זהו כלי חיצוני. יש לוודא שהתמונה אינה כוללת פרטים מזהים לפני ההעלאה.</p>
-</div>
-</section>
-
-<section id='femobesity'>
-<h2>איך מגיעים ל-<bdi dir='ltr'>.femobesity</bdi></h2>
-<p class='lead'>שבעה שלבים בתמונות, מהכניסה ל-OpenEvidence ועד שליחת סיפור המקרה.</p>
-<div class='grid g2' style='margin-bottom:20px'>
-<div class='card'><h3>מהו Dotflow</h3><p>Dotflow הוא מנגנון ב-OpenEvidence ששומר הוראות לשימוש חוזר. מפעילים אותו בשיחה בסימון נקודה לפני שמו, למשל <span class='ui'><bdi dir='ltr'>.femobesity</bdi></span>, והוא קובע מראש איך תיראה התשובה, בלי שתצטרכו לנסח את הבקשה מחדש בכל פעם.</p></div>
-<div class='card'><h3>למה נועד <bdi dir='ltr'>.femobesity</bdi></h3><p>הכלי מיועד לעבודה עם נשים בגיל המעבר שמתמודדות עם מחלת ההשמנה. מזינים את סיפור המקרה: אנמנזה, תרופות ובדיקות. הוא מחזיר בעברית תשובה קלינית מסודרת, שנשענת על חיפוש בספרות עדכנית, כולל הערכה של רמת הראיות וסיכום קצר. הוא נועד לעזור לארגן את המקרה ולשקול את הצעדים הבאים, ולא להחליף את שיקול הדעת של הרופא.</p></div>
-</div>
-<div class='note' style='margin-bottom:22px'>זהו Dotflow מהקהילה (Community Dotflows) ולא כלי רשמי של OpenEvidence. מומלץ לעיין בהוראות שלו לפני השימוש הראשון, ולבדוק את התוצר לפי חוק 1.</div>
+<section id='steps'>
+<h2>מה זה, ואיך מגיעים</h2>
+<p class='what'><bdi dir='ltr'>Dotflow</bdi> הוא כלי מוכן ב-OpenEvidence. הדוטפלו femobesity מקבל סיפור מקרה של אישה בגיל המעבר עם מחלת ההשמנה, ומחזיר תשובה בעברית עם הערכת רמת ראיות וסיכום.
+<small>זהו Dotflow מהקהילה, ולא כלי רשמי של OpenEvidence.</small></p>
+<div style='height:22px'></div>
 <div class='flow'>
 <div class='phase'><h3 class='ph'>שלבים 1 עד 3: כניסה וחיפוש</h3>
 <div class='row3'><figure class='shot'><a href='assets/steps/step1.webp' class='zoom' aria-label='הגדלת תמונה: שלב 1: נכנסים לאתר openevidence.com ומתחברים לחשבון'><img src='assets/steps/step1.webp' alt='שלב 1: נכנסים לאתר openevidence.com ומתחברים לחשבון' width='548' height='1664' loading='lazy'></a><div class='act'><a class='btn' href='https://www.openevidence.com/' target='_blank' rel='noopener'>לפתיחת OpenEvidence</a></div></figure><figure class='shot'><a href='assets/steps/step2.webp' class='zoom' aria-label='הגדלת תמונה: שלב 2: בתפריט השמאלי לוחצים על Tools ואז על Dotflows'><img src='assets/steps/step2.webp' alt='שלב 2: בתפריט השמאלי לוחצים על Tools ואז על Dotflows' width='542' height='1664' loading='lazy'></a></figure><figure class='shot'><a href='assets/steps/step3.webp' class='zoom' aria-label='הגדלת תמונה: שלב 3: לוחצים על Community Dotflows, מחפשים Obesity ובוחרים את femobesity'><img src='assets/steps/step3.webp' alt='שלב 3: לוחצים על Community Dotflows, מחפשים Obesity ובוחרים את femobesity' width='558' height='1664' loading='lazy'></a></figure></div></div>
 <div class='next' aria-hidden='true'>↓ ממשיכים</div>
 <div class='phase'><h3 class='ph'>שלבים 4 עד 7: הוספה, שיחה חדשה והזנת סיפור המקרה</h3>
-<div class='row4'><figure class='shot'><a href='assets/steps/step4.webp' class='zoom' aria-label='הגדלת תמונה: שלב 4: לוחצים על Add to my dotflows כדי לשמור את הדוטפלו'><img src='assets/steps/step4.webp' alt='שלב 4: לוחצים על Add to my dotflows כדי לשמור את הדוטפלו' width='696' height='848' loading='lazy'></a></figure><figure class='shot'><a href='assets/steps/step5.webp' class='zoom' aria-label='הגדלת תמונה: שלב 5: לוחצים על New Conversation כדי לפתוח שיחה חדשה'><img src='assets/steps/step5.webp' alt='שלב 5: לוחצים על New Conversation כדי לפתוח שיחה חדשה' width='628' height='848' loading='lazy'></a></figure><figure class='shot'><a href='assets/steps/step6.webp' class='zoom' aria-label='הגדלת תמונה: שלב 6: לוחצים על סימן הפלוס, בוחרים Dotflows ואז femobesity'><img src='assets/steps/step6.webp' alt='שלב 6: לוחצים על סימן הפלוס, בוחרים Dotflows ואז femobesity' width='640' height='860' loading='lazy'></a></figure><figure class='shot'><a href='assets/steps/step7.webp' class='zoom' aria-label='הגדלת תמונה: שלב 7: מזינים את סיפור המקרה כולל אנמנזה, בדיקות ומעבדה'><img src='assets/steps/step7.webp' alt='שלב 7: מזינים את סיפור המקרה כולל אנמנזה, בדיקות ומעבדה' width='684' height='860' loading='lazy'></a><div class='act'><a class='btn alt' href='#examples'>לסיפור המקרה לדוגמה</a></div></figure></div></div>
+<div class='row4'><figure class='shot'><a href='assets/steps/step4.webp' class='zoom' aria-label='הגדלת תמונה: שלב 4: לוחצים על Add to my dotflows כדי לשמור את הדוטפלו'><img src='assets/steps/step4.webp' alt='שלב 4: לוחצים על Add to my dotflows כדי לשמור את הדוטפלו' width='696' height='848' loading='lazy'></a></figure><figure class='shot'><a href='assets/steps/step5.webp' class='zoom' aria-label='הגדלת תמונה: שלב 5: לוחצים על New Conversation כדי לפתוח שיחה חדשה'><img src='assets/steps/step5.webp' alt='שלב 5: לוחצים על New Conversation כדי לפתוח שיחה חדשה' width='628' height='848' loading='lazy'></a></figure><figure class='shot'><a href='assets/steps/step6.webp' class='zoom' aria-label='הגדלת תמונה: שלב 6: לוחצים על סימן הפלוס, בוחרים Dotflows ואז femobesity'><img src='assets/steps/step6.webp' alt='שלב 6: לוחצים על סימן הפלוס, בוחרים Dotflows ואז femobesity' width='640' height='860' loading='lazy'></a></figure><figure class='shot'><a href='assets/steps/step7.webp' class='zoom' aria-label='הגדלת תמונה: שלב 7: מזינים את סיפור המקרה כולל אנמנזה, בדיקות ומעבדה'><img src='assets/steps/step7.webp' alt='שלב 7: מזינים את סיפור המקרה כולל אנמנזה, בדיקות ומעבדה' width='684' height='860' loading='lazy'></a><div class='act'><a class='btn alt' href='#go'>להעתקת סיפור המקרה</a></div></figure></div></div>
 </div>
-<p class='src'>לחיצה על תמונה מגדילה אותה. הסירו פרטים מזהים לפני הזנת סיפור המקרה (חוק 3).</p>
-<p class='src'>הממשק של OpenEvidence עשוי להשתנות עם הזמן.</p>
+
 </section>
 
-<section id='examples'>
-<h2>שיחה לדוגמה</h2>
-<p class='lead'>כך נראית שיחה עם <span class='ui'><bdi dir='ltr'>.femobesity</bdi></span> על מקרה לדוגמה. אפשר לפתוח את השיחה המלאה ב-OpenEvidence, או לקרוא כאן את סיפור המקרה שהוזן ולהעתיק אותו.</p>
-<div class='cta' style='margin-bottom:0'>
-<a class='btn' href='https://www.openevidence.com/ask/a7dcbe3a-6e30-41fc-b1d2-a2ecc02b71ae' target='_blank' rel='noopener'>לשיחה לדוגמה ב-OpenEvidence</a>
+<section id='go' style='border-top:0;padding-top:10px'>
+<div class='go'>
+<h2>מוכנים לנסות?</h2>
+<p class='lead'>העתיקו את סיפור המקרה לדוגמה, עברו ל-OpenEvidence, והדביקו אותו בשיחה אחרי שבחרתם את הדוטפלו femobesity.</p>
+<div class='big'>
+<button class='btn' id='copy' type='button'><span class='num'>1</span>העתקת סיפור המקרה</button>
+<a class='btn alt' href='https://www.openevidence.com/' target='_blank' rel='noopener' style='background:transparent'><span class='num'>2</span>מעבר ל-OpenEvidence</a>
 </div>
-
-<article class='casefile'>
-<header class='ch'>
-<div><span class='tag'>מקרה לדוגמה, לא נתוני אמת</span><h3>סיפור המקרה</h3><p>אישה בת 48, נשואה + 4, עורכת דין במקצוע</p></div>
-<div class='kv'><div><b>48</b><span>גיל</span></div><div><b>28.6</b><span>BMI ק״ג/מ״ר</span></div><div><b>75</b><span>משקל, ק״ג</span></div></div>
-</header>
-
-<div class='cs'><h4><i>1</i>רקע רפואי כללי</h4>
-<p>בריאה בדרך כלל. היסטוריה של סוכרת הריונית בשני ההריונות האחרונים (אחרונה לפני 9 שנים).</p></div>
-
-<div class='cs'><h4><i>2</i>תלונה עיקרית (Chief Complaint)</h4>
-<p>פנייה עצמית בבקשה לבירור רמות קורטיזול ותפקודי בלוטת התריס, עקב תחושה ש״אינה עצמה״, דחק כרוני קשה ועלייה בלתי מסברת במשקל.</p></div>
-
-<div class='cs'><h4><i>3</i>תולדות המחלה הנוכחית (Anamnesis / HPI)</h4>
-<div class='cols'>
-<div><h5>עלייה במשקל ושינוי פיזור שומן</h5><p>מדווחת על עלייה במשקל עם הצטברות שומן מרכזית בולטת באזור הבטן (״לא הייתה לי קודם הבטן הזו״).</p></div>
-<div><h5>תסמינים נוירו-פסיכיאטריים ומתח</h5><p>דחק כרוני קשה (דאגה לבנה בלבנון), הפרעות שינה קשות (אי-שקט, יקיצות מרובות), דפיקות לב (פלפיטציות), עצבנות רבה ואכילה רגשית.</p></div>
-<div><h5>תסמינים הורמונליים ופרי-מנופאוזליים</h5><ul>
-<li><b>דפוס הווסת:</b> התקצרות המחזור מ-30 יום ל-3 שבועות עם דימומים כבדים.</li>
-<li><b>PMS:</b> החמרה בעצבנות מוגברת טרום-ווסתית, כאבי ראש ובצקות/נפיחות.</li>
-<li><b>GSM:</b> יובש נרתיקי ו-2 אירועים של דלקת בדרכי השתן בשנה החולפת.</li>
-<li>ירידה בחשק המיני (ליבידו).</li></ul></div>
+<div id='copyok' role='status' aria-live='polite' style='margin-top:12px'></div>
+<p class='sm'><a href='https://www.openevidence.com/ask/a7dcbe3a-6e30-41fc-b1d2-a2ecc02b71ae' target='_blank' rel='noopener'>לצפייה בשיחה לדוגמה</a></p>
 </div>
-<div class='fu'><b>תגובה לטיפול תרופתי קודם (ביקור מעקב כעבור 3 חודשים)</b>
-תחת טיפול ב-SSRI (פריידמה) ושינוי אורח חיים (תזונה ופעילות גופנית), דיווחה על ירידה קלה בעצבנות ובבכי, אך צברה 1 ק״ג נוסף במשקל, וסבלה מאי-שקט בשינה, כאבי ראש, כאבי שרירים וירידה בליבידו.</div></div>
-
-<div class='cs'><h4><i>4</i>מדדים ובדיקה גופנית (Vitals &amp; Physical Exam)</h4>
-<div class='vit'>
-<div><span>גובה</span><b>162 ס״מ</b></div>
-<div><span>משקל נוכחי</span><b>75 ק״ג</b><small>עלייה של 8 ק״ג ממשקל של 67 ק״ג שנתיים קודם לכן</small></div>
-<div><span>BMI נוכחי</span><b>28.6 ק״ג/מ״ר</b><small>משקל עודף; עלייה מ-BMI של 25.5 ק״ג/מ״ר</small></div>
-<div><span>לחץ דם</span><b>129/82 מ״מ כספית</b></div>
-</div>
-<p style='margin-top:12px'><b>בדיקת לב:</b> תקינה. <b>סימנים קליניים לקושינג:</b> שלילי (אין עדות קלינית לקושינג).</p></div>
-
-<div class='cs'><h4><i>5</i>בדיקות מעבדה (Laboratory Results)</h4>
-<div class='labs'>
-<div class='lab ok'><div class='lh'><span>תפקודי בלוטת התריס</span><em>תקין</em></div>
-<div class='row'><span>TSH</span><b dir='ltr'>1.62 mIU/L</b></div>
-<div class='row'><span>FT4</span><b dir='ltr'>1.1 ng/dL</b></div></div>
-<div class='lab hi'><div class='lh'><span>פרופיל גליקמי</span><em>מוגבר</em></div>
-<div class='row'><span>גלוקוז בצום</span><b dir='ltr'>109 mg/dL</b></div>
-<div class='row'><span>HbA1c</span><b dir='ltr'>5.9%</b></div>
-<small>טרום-סוכרת / דיסגליקמיה.</small></div>
-<div class='lab hi'><div class='lh'><span>פרופיל ליפידים</span><em>מוגבר</em></div>
-<div class='row'><span>כולסטרול כולל</span><b dir='ltr'>236 mg/dL</b></div>
-<div class='row'><span>LDL</span><b dir='ltr'>168 mg/dL</b></div>
-<div class='row'><span>טריגליצרידים</span><b dir='ltr'>170 mg/dL</b></div>
-<div class='row'><span>HDL</span><b dir='ltr'>48 mg/dL</b></div>
-<small>דיסליפידמיה אטרוגנית.</small></div>
-<div class='lab ok'><div class='lh'><span>ספירת דם (CBC)</span><em>תקין</em></div>
-<div class='row'><span>המוגלובין</span><b dir='ltr'>13.2 g/dL</b></div>
-<div class='row'><span>כדוריות לבנות</span><b dir='ltr'>6.1 K/µL</b></div>
-<div class='row'><span>טרומבוציטים</span><b dir='ltr'>258 K/µL</b></div></div>
-</div></div>
-</article>
-
-<div class='copybar'>
-<button class='btn' id='copy' type='button'>העתקת סיפור המקרה</button><span id='copyok' role='status' aria-live='polite'></span>
-</div>
-<p class='src'>שמה של המטופלת הושמט בכוונה, בהתאם לחוק 3 (היגיינת מידע): לא מזינים לכלי AI פרטים מזהים.</p>
 </section>
 
 <section id='community'>
@@ -324,16 +235,15 @@ footer .credit{color:var(--text);font-size:16px}
 </div>
 </section>
 
-<section id='disclosures'>
-<h2>גילוי נאות</h2>
+<section id='disclosures' style='padding:30px 0'>
 <div class='note'>התוכן בחסות חברת אלי לילי ומיועד לצוות הרפואי בלבד. שמות המשתתפים במפגש נשמרים אצל אלי-לילי ישראל בע״מ וחברות קשורות אליה לצורך תיעוד האירוע ותפעולו.</div>
 </section>
 </main>
 </div>
 
-<footer><div class='page' style='display:block'>
+<footer><div class='page'>
 <p class='credit'>האתר נוצר על ידי ד״ר רועי שליט, <a href='mailto:dr.rshalit@gmail.com'>dr.rshalit@gmail.com</a>, לצורך לימודי בלבד.</p>
-<p>האתר הוא עזר לימודי, ואינו מהווה ייעוץ רפואי או תחליף לשיקול דעת קליני. אין להזין בכלי AI מידע מזהה של מטופלים. עודכן ב-11.10.2026.</p>
+<p>האתר הוא עזר לימודי, ואינו מהווה ייעוץ רפואי או תחליף לשיקול דעת קליני. עודכן ב-11.10.2026.</p>
 </div></footer>
 <dialog id='lb' aria-label='תמונה מוגדלת'><button type='button' id='lbx' aria-label='סגירה'>×</button><img alt='' src=''></dialog>
 <button id='top' type='button' aria-label='חזרה לראש העמוד'>↑</button>
