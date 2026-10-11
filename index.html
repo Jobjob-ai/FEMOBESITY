@@ -9,6 +9,12 @@
 <link rel='icon' type='image/png' href='assets/favicon.png'>
 <title>איך מגיעים ל-femobesity – אתר עזר</title>
 <meta name='description' content='הדרכה קצרה בתמונות: איך מגיעים ל-Dotflow בשם femobesity ב-OpenEvidence – ד״ר רועי שליט'>
+<meta property='og:type' content='website'>
+<meta property='og:locale' content='he_IL'>
+<meta property='og:title' content='איך מגיעים ל-femobesity ב-OpenEvidence'>
+<meta property='og:description' content='הדרכה קצרה בתמונות לרופאות ולרופאי המשפחה. ד״ר רועי שליט, MedAcademy.ai'>
+<meta property='og:image' content='https://femobesity.vercel.app/assets/medacademy-logo.png'>
+<meta name='twitter:card' content='summary'>
 <link rel='preconnect' href='https://fonts.googleapis.com'>
 <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
 <link href='https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800&display=swap' rel='stylesheet'>
@@ -135,10 +141,6 @@ button.btn{border:0;cursor:pointer;font-family:inherit}
 .shot img{display:block;width:100%;height:auto}
 .shot .act{display:flex;justify-content:center}
 .next{justify-self:center;color:var(--gold);font-weight:600;font-size:15px;border:1px solid var(--line);border-radius:99px;padding:3px 16px;background:var(--panel2)}
-dialog#lb{border:0;background:transparent;padding:0;max-width:96vw;max-height:94vh;overflow:visible}
-dialog#lb::backdrop{background:rgba(0,0,0,.85)}
-dialog#lb img{display:block;max-width:min(94vw,760px);max-height:90vh;width:auto;height:auto;border-radius:14px;border:2px solid var(--gold)}
-dialog#lb button{position:absolute;top:-14px;right:-14px;width:40px;height:40px;border-radius:50%;border:0;background:var(--gold);color:#111;font-size:22px;cursor:pointer}
 @media(max-width:820px){.row3{grid-template-columns:1fr;max-width:340px;margin:0 auto}.row4{grid-template-columns:1fr;max-width:380px;margin:0 auto}.phase{padding:16px}}
 
 .warnrow{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:-8px 0 8px}
@@ -186,6 +188,26 @@ dialog#lb button{position:absolute;top:-14px;right:-14px;width:40px;height:40px;
 .ospane .zoom{display:block;border-radius:14px;overflow:hidden;border:1px solid rgba(255,200,61,.35);background:#000;cursor:zoom-in}
 .ospane img{display:block;width:100%;height:auto}
 @media(max-width:600px){.pvs{padding:16px;gap:12px}.pvs>i{width:34px;height:34px;font-size:17px}}
+
+dialog#lb{border:0;padding:0;background:transparent;max-width:none;max-height:none;width:100vw;height:100dvh;margin:0;color:var(--text)}
+dialog#lb[open]{display:grid;place-items:center;background:rgba(0,0,0,.9);padding:70px 14px 56px;cursor:zoom-out}
+dialog#lb::backdrop{background:rgba(0,0,0,.9)}
+dialog#lb img{display:block;max-width:min(100%,780px);max-height:calc(100dvh - 140px);width:auto;height:auto;border-radius:14px;border:2px solid var(--gold)}
+dialog#lb #lbx{position:fixed;top:12px;right:12px;min-height:48px;padding:0 20px;border-radius:99px;border:0;background:var(--gold);color:#111;font-family:inherit;font-weight:700;font-size:17px;cursor:pointer;z-index:2}
+dialog#lb .lbh{position:fixed;bottom:16px;left:0;right:0;text-align:center;margin:0;color:#cfd8ea;font-size:15px}
+.bar{position:fixed;top:0;left:0;right:0;z-index:35;background:rgba(7,11,20,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);transform:translateY(-100%);visibility:hidden;transition:transform .25s,visibility 0s .25s}
+.bar.show{transform:none;visibility:visible;transition:transform .25s}
+.bin{max-width:1000px;margin:0 auto;padding:8px 24px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.bt{font-weight:600}
+.btn.sm{padding:8px 16px;font-size:15px;min-height:40px}
+.cchip .ci{flex:none}
+.cchip{flex-wrap:wrap;justify-content:center;max-width:100%}
+@media(max-width:380px){.cchip{font-size:20px;gap:8px;padding:8px 12px}.cchip .cl{font-size:13px}}
+#toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:#0f2a1c;color:#d7ffe8;border:1px solid var(--green);border-radius:14px;padding:12px 20px;font-size:16px;font-weight:500;z-index:80;max-width:calc(100vw - 32px);text-align:center;transition:opacity .2s,transform .2s;box-shadow:0 10px 30px rgba(0,0,0,.45)}
+#toast.show{opacity:1;transform:translate(-50%,0)}
+#toast.bad{background:#2b1010;color:#ffd7d7;border-color:var(--red)}
+.btn,.cchip,.ospick button,#top{min-height:44px}
+@media(prefers-reduced-motion:reduce){.bar,#toast{transition:none}}
 .go .sm{margin-top:18px;font-size:15px}
 .page{display:block;max-width:1000px}
 main section:first-child{border-top:0}
@@ -203,6 +225,7 @@ footer .credit{color:var(--text);font-size:16px}
 <body>
 <a class='skip' href='#main'>דלגו לתוכן</a>
 <div id='progress' aria-hidden='true'></div>
+<div id='bar' class='bar'><div class='bin'><span class='bt'>femobesity · אתר עזר</span><a class='btn sm' href='https://www.openevidence.com/' target='_blank' rel='noopener'>מעבר ל-OpenEvidence</a></div></div>
 
 <header class='hero'>
 <canvas id='fx' aria-hidden='true'></canvas>
@@ -231,7 +254,7 @@ footer .credit{color:var(--text);font-size:16px}
 <h2>מה זה, ואיך מגיעים</h2>
 <div class='tool'>
 <p class='what'>כלי עזר לרופאות ולרופאי המשפחה העסוקים. מופעל ב-OpenEvidence בשם:</p>
-<button class='cchip' type='button' data-copy='.femobesity' aria-label='העתקת השם femobesity'><bdi dir='ltr'>.femobesity</bdi><span class='cl'>לחצו להעתקה</span></button>
+<button class='cchip' type='button' data-copy='.femobesity' aria-label='העתקת השם femobesity'><bdi dir='ltr'>.femobesity</bdi><svg class='ci' viewBox='0 0 24 24' width='22' height='22' aria-hidden='true' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='9' y='9' width='12' height='12' rx='2'/><path d='M5 15V5a2 2 0 0 1 2-2h10'/></svg><span class='cl'>לחצו להעתקה</span></button>
 <div class='io'>
 <div class='iobox in'><b>מכניסים</b><ul><li>סיפור המקרה</li><li>בדיקות המעבדה</li></ul><small>בצורה חסויה, בלי פרטים מזהים</small></div>
 <div class='ioarrow' aria-hidden='true'>←</div>
@@ -282,7 +305,7 @@ footer .credit{color:var(--text);font-size:16px}
 <a class='btn alt' href='https://www.openevidence.com/' target='_blank' rel='noopener' style='background:transparent'><span class='num'>2</span>מעבר ל-OpenEvidence</a>
 </div>
 <div id='copyok' role='status' aria-live='polite' style='margin-top:12px'></div>
-<p class='sm'><button class='cchip' type='button' data-copy='.femobesity' aria-label='העתקת השם femobesity' style='font-size:18px;padding:6px 14px'><bdi dir='ltr'>.femobesity</bdi><span class='cl'>העתקת השם</span></button></p>
+<p class='sm'><button class='cchip' type='button' data-copy='.femobesity' aria-label='העתקת השם femobesity' style='font-size:18px;padding:6px 14px'><bdi dir='ltr'>.femobesity</bdi><svg class='ci' viewBox='0 0 24 24' width='22' height='22' aria-hidden='true' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='9' y='9' width='12' height='12' rx='2'/><path d='M5 15V5a2 2 0 0 1 2-2h10'/></svg><span class='cl'>העתקת השם</span></button></p>
 <p class='sm' style='margin-top:10px'><a href='https://www.openevidence.com/ask/a7dcbe3a-6e30-41fc-b1d2-a2ecc02b71ae' target='_blank' rel='noopener'>לצפייה בשיחה לדוגמה</a></p>
 </div>
 </section>
@@ -309,7 +332,7 @@ footer .credit{color:var(--text);font-size:16px}
 <p class='credit'>האתר נוצר על ידי ד״ר רועי שליט, <a href='mailto:dr.rshalit@gmail.com'>dr.rshalit@gmail.com</a>, לצורך לימודי בלבד.</p>
 <p>האתר הוא עזר לימודי, ואינו מהווה ייעוץ רפואי או תחליף לשיקול דעת קליני. עודכן ב-11.10.2026.</p>
 </div></footer>
-<dialog id='lb' aria-label='תמונה מוגדלת'><button type='button' id='lbx' aria-label='סגירה'>×</button><img alt='' src=''></dialog>
+<dialog id='lb' aria-label='תמונה מוגדלת'><button type='button' id='lbx' aria-label='סגירה וחזרה לדף'>✕ סגירה</button><img alt='' src=''><p class='lbh'>לחצו בכל מקום כדי לחזור</p></dialog>
 <button id='top' type='button' aria-label='חזרה לראש העמוד'>↑</button>
 
 <script type='text/plain' id='casetxt'>מקרה לדוגמה, לא נתוני אמת
@@ -344,7 +367,7 @@ BMI נוכחי: 28.6 ק"ג/מ"ר (משקל עודף; עלייה מ-BMI של 25.5
 פרופיל ליפידים: כולסטרול כולל: 236 mg/dL, LDL: 168 mg/dL, טריגליצרידים: 170 mg/dL, HDL: 48 mg/dL - מוגבר (דיסליפידמיה אטרוגנית).
 ספירת דם (CBC): המוגלובין: 13.2 g/dL, כדוריות לבנות: 6.1 K/µL, טרומבוציטים: 258 K/µL - תקין.</script>
 
-<script src='assets/app.js' defer></script>
+<script src='assets/app.js?v=20261011d' defer></script>
 <script defer src='/_vercel/insights/script.js'></script>
 </body>
 </html>
