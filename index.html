@@ -154,6 +154,22 @@ dialog#lb button{position:absolute;top:-14px;right:-14px;width:40px;height:40px;
 .go .num{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;background:#111;color:var(--gold);font-size:14px;font-weight:800}
 .go .btn.alt .num{background:var(--gold);color:#111}
 .go .btn{justify-content:center}@media(max-width:600px){.go .btn{width:100%;max-width:330px;font-size:17px;padding:14px 16px;white-space:nowrap}}
+
+.tool{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px}
+.tool .what{margin:0 0 12px;font-size:19px}
+.cchip{display:inline-flex;align-items:center;gap:14px;background:#1b2740;color:var(--gold);border:1px dashed var(--gold);border-radius:14px;padding:10px 18px;font-family:ui-monospace,Consolas,monospace;font-size:24px;font-weight:600;cursor:pointer;transition:background .15s}
+.cchip:hover{background:#243459}
+.cchip .cl{font-family:var(--sans);font-size:14px;font-weight:500;color:var(--text);background:rgba(255,255,255,.08);border-radius:99px;padding:2px 12px}
+.cchip.done{border-style:solid;border-color:var(--green);color:var(--green)}
+.io{display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:stretch;margin-top:18px}
+.iobox{border-radius:14px;padding:16px 18px;background:var(--panel2);border:1px solid var(--line)}
+.iobox b{display:block;font-size:18px;margin-bottom:6px}
+.iobox ul{margin:0;padding:0 20px 0 0}.iobox li{margin:2px 0}
+.iobox small{display:block;margin-top:8px;color:var(--muted);font-size:14px}
+.iobox.in{border-top:4px solid var(--cyan)}.iobox.out{border-top:4px solid var(--gold)}
+.iobox.in b{color:var(--cyan)}.iobox.out b{color:var(--gold)}
+.ioarrow{align-self:center;font-size:30px;color:var(--gold)}
+@media(max-width:700px){.io{grid-template-columns:1fr}.ioarrow{justify-self:center;transform:rotate(-90deg)}}
 .go .sm{margin-top:18px;font-size:15px}
 .page{display:block;max-width:1000px}
 main section:first-child{border-top:0}
@@ -197,8 +213,16 @@ footer .credit{color:var(--text);font-size:16px}
 
 <section id='steps'>
 <h2>מה זה, ואיך מגיעים</h2>
-<p class='what'><bdi dir='ltr'>Dotflow</bdi> הוא כלי מוכן ב-OpenEvidence. הדוטפלו femobesity מקבל סיפור מקרה של אישה בגיל המעבר עם מחלת ההשמנה, ומחזיר תשובה בעברית עם הערכת רמת ראיות וסיכום.
-<small>זהו Dotflow מהקהילה, ולא כלי רשמי של OpenEvidence.</small></p>
+<div class='tool'>
+<p class='what'>כלי עזר לרופאות ולרופאי המשפחה העסוקים. מופעל ב-OpenEvidence בשם:</p>
+<button class='cchip' type='button' data-copy='.femobesity' aria-label='העתקת השם femobesity'><bdi dir='ltr'>.femobesity</bdi><span class='cl'>לחצו להעתקה</span></button>
+<div class='io'>
+<div class='iobox in'><b>מכניסים</b><ul><li>סיפור המקרה</li><li>בדיקות המעבדה</li></ul><small>בצורה חסויה, בלי פרטים מזהים</small></div>
+<div class='ioarrow' aria-hidden='true'>←</div>
+<div class='iobox out'><b>מקבלים</b><ul><li>סיכום קצר לתיק הרפואי</li><li>תזכורת אילו בדיקות והדמיה להשלים</li><li>משפטים פשוטים להסבר למטופלת</li></ul></div>
+</div>
+<p class='src'>זהו Dotflow מהקהילה, ולא כלי רשמי של OpenEvidence.</p>
+</div>
 <div style='height:22px'></div>
 <div class='flow'>
 <div class='phase'><h3 class='ph'>שלבים 1 עד 3: כניסה וחיפוש</h3>
@@ -219,7 +243,8 @@ footer .credit{color:var(--text);font-size:16px}
 <a class='btn alt' href='https://www.openevidence.com/' target='_blank' rel='noopener' style='background:transparent'><span class='num'>2</span>מעבר ל-OpenEvidence</a>
 </div>
 <div id='copyok' role='status' aria-live='polite' style='margin-top:12px'></div>
-<p class='sm'><a href='https://www.openevidence.com/ask/a7dcbe3a-6e30-41fc-b1d2-a2ecc02b71ae' target='_blank' rel='noopener'>לצפייה בשיחה לדוגמה</a></p>
+<p class='sm'><button class='cchip' type='button' data-copy='.femobesity' aria-label='העתקת השם femobesity' style='font-size:18px;padding:6px 14px'><bdi dir='ltr'>.femobesity</bdi><span class='cl'>העתקת השם</span></button></p>
+<p class='sm' style='margin-top:10px'><a href='https://www.openevidence.com/ask/a7dcbe3a-6e30-41fc-b1d2-a2ecc02b71ae' target='_blank' rel='noopener'>לצפייה בשיחה לדוגמה</a></p>
 </div>
 </section>
 

@@ -12,6 +12,15 @@
   if(lb&&lb.showModal){var lbi=lb.querySelector('img');
     [].slice.call(document.querySelectorAll('a.zoom')).forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();lbi.src=a.getAttribute('href');lbi.alt=a.querySelector('img').alt;lb.showModal()})});
     lb.addEventListener('click',function(e){if(e.target===lb||e.target.id==='lbx')lb.close()});}
+  /* copy chips */
+  function copyTxt(t,okf,failf){
+    function fb(){var a=document.createElement('textarea');a.value=t;a.style.position='fixed';a.style.opacity='0';document.body.appendChild(a);a.select();var r=false;try{r=document.execCommand('copy')}catch(e){}document.body.removeChild(a);(r?okf:failf)()}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(okf,fb)}else fb();
+  }
+  [].slice.call(document.querySelectorAll('[data-copy]')).forEach(function(c){
+    var lab=c.querySelector('.cl'),orig=lab?lab.textContent:'';
+    c.addEventListener('click',function(){copyTxt(c.getAttribute('data-copy'),function(){c.classList.add('done');if(lab)lab.textContent='הועתק';setTimeout(function(){c.classList.remove('done');if(lab)lab.textContent=orig},2000)},function(){if(lab)lab.textContent='סמנו והעתיקו ידנית'})});
+  });
   /* copy case */
   var btn=document.getElementById('copy'),ok=document.getElementById('copyok');
   btn.addEventListener('click',function(){
