@@ -170,6 +170,22 @@ dialog#lb button{position:absolute;top:-14px;right:-14px;width:40px;height:40px;
 .iobox.in b{color:var(--cyan)}.iobox.out b{color:var(--gold)}
 .ioarrow{align-self:center;font-size:30px;color:var(--gold)}
 @media(max-width:700px){.io{grid-template-columns:1fr}.ioarrow{justify-self:center;transform:rotate(-90deg)}}
+
+.pv{display:grid;gap:16px}
+.pvs{display:flex;gap:16px;align-items:flex-start;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px}
+.pvs>i{flex:none;font-style:normal;width:40px;height:40px;border-radius:50%;background:var(--gold);color:#111;display:grid;place-items:center;font-weight:800;font-size:20px}
+.pvs>div{min-width:0;flex:1}
+.pvs h3{margin:0 0 4px;font-size:21px}.pvs p{margin:0;color:var(--muted)}
+.pvs .ask{margin-top:18px;color:var(--text);font-weight:600;font-size:18px}
+.ospick{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px;max-width:460px}
+.ospick button{font-family:inherit;font-size:20px;font-weight:700;padding:16px 10px;border-radius:14px;border:2px solid var(--line);background:var(--panel2);color:var(--text);cursor:pointer;transition:border-color .15s,background .15s}
+.ospick button:hover{border-color:var(--gold)}
+.ospick button[aria-selected=true]{background:var(--gold);color:#111;border-color:var(--gold)}
+.ospane{margin-top:16px;max-width:640px}
+.ospane[hidden]{display:none}
+.ospane .zoom{display:block;border-radius:14px;overflow:hidden;border:1px solid rgba(255,200,61,.35);background:#000;cursor:zoom-in}
+.ospane img{display:block;width:100%;height:auto}
+@media(max-width:600px){.pvs{padding:16px;gap:12px}.pvs>i{width:34px;height:34px;font-size:17px}}
 .go .sm{margin-top:18px;font-size:15px}
 .page{display:block;max-width:1000px}
 main section:first-child{border-top:0}
@@ -237,19 +253,23 @@ footer .credit{color:var(--text);font-size:16px}
 <section id='privacy'>
 <h2>איך מעתיקים מידע בצורה אנונימית</h2>
 <p class='lead'>לפני שמדביקים מקרה אמיתי: מעתיקים את הנתונים הרפואיים, בלי פרטים מזהים.</p>
-<div class='grid g2'>
-<div class='card'><h3>אנמנזה</h3><p>אפשר להעתיק ישירות מהקליקס. לפני ההדבקה בודקים שאין בטקסט שם, תעודת זהות, טלפון או כתובת.</p></div>
-<div class='card'><h3>בדיקות מעבדה ומדדים</h3><p>מצלמים אזור מהמסך בעזרת כלי הגזירה של המחשב, וכוללים רק את הבדיקות, בלי שורת הפרטים האישיים.</p></div>
+<div class='pv'>
+<div class='pvs'><i>1</i><div><h3>אנמנזה</h3><p>מעתיקים ישירות מהקליקס, ובודקים שאין בטקסט שם, תעודת זהות, טלפון או כתובת.</p></div></div>
+<div class='pvs'><i>2</i><div><h3>בדיקות מעבדה</h3>
+<p>מצלמים את המסך ומסמנים רק את הבדיקות, בלי שורת הפרטים האישיים.</p>
+<p class='ask' id='askos'>איזה מחשב יש לכם?</p>
+<div class='ospick' role='tablist' aria-labelledby='askos'>
+<button type='button' role='tab' id='tab-mac' aria-controls='pane-mac' aria-selected='false' data-os='mac'>Mac</button>
+<button type='button' role='tab' id='tab-win' aria-controls='pane-win' aria-selected='false' data-os='win'>Windows</button>
 </div>
-<div class='os'>
-<div class='card'><b>Mac</b><div class='keys'><kbd>Shift</kbd>+<kbd>⌘ Command</kbd>+<kbd>5</kbd></div><span class='src' style='margin:0'>פותח סרגל צילום מסך, עם בחירה של אזור מהמסך.</span></div>
-<div class='card'><b>Windows</b><div class='keys'><kbd>Shift</kbd>+<kbd>Win</kbd>+<kbd>S</kbd></div><span class='src' style='margin:0'>פותח את כלי הגזירה, עם בחירה של אזור מהמסך.</span></div>
-</div>
-<div class='card' style='margin-top:16px'>
-<h3>הפיכת צילום מסך לטקסט</h3>
-<p>את צילום המסך אפשר להפוך לטקסט שמעתיקים בקלות, בעזרת בוט ב-Gemini. מעלים אליו את התמונה, ומקבלים טקסט להדבקה ב-OpenEvidence.</p>
+<div class='ospane' id='pane-mac' role='tabpanel' aria-labelledby='tab-mac' hidden><a class='zoom' href='assets/shot-mac.webp' aria-label='הגדלת התמונה'><img src='assets/shot-mac.webp' alt='Mac: מקישים Shift, Command ו-5 יחד. נפתח סרגל צילום מסך, בוחרים אזור ולוחצים Capture' width='838' height='662' loading='lazy'></a></div>
+<div class='ospane' id='pane-win' role='tabpanel' aria-labelledby='tab-win' hidden><a class='zoom' href='assets/shot-win.webp' aria-label='הגדלת התמונה'><img src='assets/shot-win.webp' alt='Windows: מקישים Shift, Windows ו-S יחד. נפתח כלי הגזירה, בוחרים אזור ומצלמים' width='794' height='662' loading='lazy'></a></div>
+<noscript><style>.ospane[hidden]{display:block}</style></noscript>
+</div></div>
+<div class='pvs'><i>3</i><div><h3>הפיכת צילום המסך לטקסט</h3>
+<p>מעלים את התמונה לבוט ב-Gemini, ומקבלים טקסט להעתקה והדבקה ב-OpenEvidence.</p>
 <p style='margin-top:12px'><a class='btn alt' href='https://gemini.google.com/gem/1DNTxwnmM_QZWnf1IaJHiZwQOZ8yYATFg?usp=sharing' target='_blank' rel='noopener' style='background:transparent'>לבוט צילומי המסך</a></p>
-<p class='src'>זהו כלי חיצוני. מוודאים שהתמונה אינה כוללת פרטים מזהים לפני ההעלאה.</p>
+<p class='src'>זהו כלי חיצוני. מוודאים שהתמונה אינה כוללת פרטים מזהים לפני ההעלאה.</p></div></div>
 </div>
 </section>
 
