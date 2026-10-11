@@ -7,6 +7,11 @@
   function onScroll(){var h=document.documentElement,max=h.scrollHeight-h.clientHeight;bar.style.width=(max>0?h.scrollTop/max*100:0)+'%';top.classList.toggle('show',h.scrollTop>900)}
   window.addEventListener('scroll',onScroll,{passive:true});onScroll();
   top.addEventListener('click',function(){window.scrollTo({top:0})});
+  /* image lightbox */
+  var lb=document.getElementById('lb');
+  if(lb&&lb.showModal){var lbi=lb.querySelector('img');
+    [].slice.call(document.querySelectorAll('a.zoom')).forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();lbi.src=a.getAttribute('href');lbi.alt=a.querySelector('img').alt;lb.showModal()})});
+    lb.addEventListener('click',function(e){if(e.target===lb||e.target.id==='lbx')lb.close()});}
   /* copy case */
   var btn=document.getElementById('copy'),ok=document.getElementById('copyok');
   btn.addEventListener('click',function(){
