@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang='he' dir='rtl'>
+<head>
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta name='robots' content='noindex, nofollow'>
+<meta name='color-scheme' content='dark'>
+<meta name='theme-color' content='#040a18'>
+<link rel='icon' type='image/png' href='assets/favicon.png'>
+<title>AI בפעולה במרפאה וביום יום | MedAcademy.AI</title>
+<meta name='description' content='אתר המשך לוובינר: איך מגיעים ל-cardiobesity ב-OpenEvidence, איך מעתיקים מידע בצורה אנונימית ואיך מתנסים. ד״ר רועי שליט, MedAcademy.AI'>
+<meta property='og:type' content='website'>
+<meta property='og:locale' content='he_IL'>
+<meta property='og:title' content='AI בפעולה במרפאה וביום יום | MedAcademy.AI'>
+<meta property='og:description' content='הכלים מההרצאה, צעד אחר צעד. ד״ר רועי שליט, MedAcademy.AI'>
+<meta property='og:image' content='https://cardiobesity.vercel.app/assets/medacademy-logo.png'>
+<meta name='twitter:card' content='summary'>
+<link rel='preconnect' href='https://fonts.googleapis.com'>
+<link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+<link href='https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Rubik:wght@300;400;500;600;700;800&display=swap' rel='stylesheet'>
+<style>
+/* MedAcademy.AI tokens: bg #040A18, surface #111624, raised #172938, border #363B46, gold #F2C14E, slate #94A3B8, silver #C8CDD6 (derived from logo) */
+:root{--bg:#040a18;--panel:#111624;--panel2:#172938;--line:#363b46;--text:#f1f5f9;--muted:#94a3b8;--gold:#f2c14e;--silver:#c8cdd6;--ink:#0f172a;--red:#e8847c;--green:#52d98a;--font:Inter,Rubik,system-ui,sans-serif;--pill:9999px;--r:12px;--r2:8px;--shadow:0 10px 30px rgba(0,0,0,.35)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font);line-height:1.7;font-size:17px;-webkit-font-smoothing:antialiased}
+a{color:var(--gold)}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:6px}
+.skip{position:absolute;right:12px;top:-60px;background:var(--gold);color:var(--ink);padding:8px 14px;border-radius:var(--pill);z-index:50;font-weight:700;text-decoration:none}
+.skip:focus{top:10px}
+#progress{position:fixed;top:0;right:0;height:3px;width:0;background:var(--gold);z-index:40}
+
+/* hero */
+.hero{position:relative;overflow:hidden;min-height:min(74vh,600px);display:flex;align-items:flex-end;background:radial-gradient(900px 480px at 85% 0%,rgba(242,193,78,.14),transparent),radial-gradient(800px 500px at 0% 20%,rgba(23,41,56,.9),transparent),var(--bg)}
+.hero canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.hero::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(4,10,24,.2) 0%,rgba(4,10,24,.55) 60%,var(--bg) 100%);pointer-events:none}
+.hero .in{position:relative;z-index:2;width:100%;max-width:1000px;margin:0 auto;padding:96px 24px 52px}
+.brand{display:block;width:clamp(150px,22vw,220px);height:auto;margin:0 0 22px}
+.chip{display:inline-block;border:1px solid rgba(242,193,78,.6);color:var(--gold);border-radius:var(--pill);padding:3px 16px;font-size:14px;margin-bottom:18px;background:rgba(4,10,24,.55)}
+.hero h1{font-weight:800;font-size:clamp(38px,8vw,92px);line-height:1.05;margin:0 0 16px;letter-spacing:-.01em}
+.hero h1 .g{color:var(--gold)}
+.hero p.sub{color:var(--silver);font-size:clamp(17px,2vw,21px);max-width:620px;margin:0 0 26px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:30px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--gold);color:var(--ink);text-decoration:none;font-weight:700;border-radius:var(--pill);padding:12px 26px;font-size:16px;box-shadow:var(--shadow);transition:transform .2s,filter .2s;min-height:44px;border:1px solid transparent;font-family:inherit;cursor:pointer}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.06)}
+.btn.alt{background:transparent;color:var(--text);border-color:var(--line);box-shadow:none}
+.btn.alt:hover{border-color:var(--gold);color:var(--gold)}
+.btn.sm{padding:8px 18px;font-size:15px;min-height:40px}
+.byline{font-weight:600}.byline small{display:block;color:var(--muted);font-weight:400;font-size:14.5px}
+
+/* layout */
+.page{max-width:1000px;margin:0 auto;padding:0 24px}
+section{padding:54px 0;border-top:1px solid var(--line)}
+main section:first-child{border-top:0}
+h2{font-size:clamp(28px,4.2vw,42px);line-height:1.15;margin:0 0 10px;font-weight:700}
+h3{margin:0}
+.lead{color:var(--muted);margin:0 0 26px;max-width:660px;font-size:18px}
+.src{font-size:14px;color:var(--muted);margin:12px 0 0}
+
+/* warnings */
+.warnrow{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:-8px 0 8px}
+.alert{display:flex;gap:14px;align-items:flex-start;background:rgba(232,132,124,.09);border:1px solid rgba(232,132,124,.5);border-radius:var(--r);padding:18px 20px}
+.alert i{flex:none;width:38px;height:38px;border-radius:50%;background:var(--red);color:#1a0a0a;font-style:normal;font-weight:800;font-size:22px;display:grid;place-items:center}
+.alert b{display:block;font-size:19px;margin-bottom:2px}.alert span{color:#e7c9c9;font-size:16px}
+
+/* tool card */
+.tool{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:22px}
+.what{font-size:19px;max-width:700px;margin:0 0 14px}
+.cchip{display:inline-flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:14px;max-width:100%;background:var(--panel2);color:var(--gold);border:1px dashed var(--gold);border-radius:var(--r);padding:10px 18px;font-family:ui-monospace,Consolas,monospace;font-size:24px;font-weight:600;cursor:pointer;transition:background .15s;min-height:44px}
+.cchip:hover{background:#1e3447}
+.cchip .ci{flex:none}
+.cchip .cl{font-family:var(--font);font-size:14px;font-weight:500;color:var(--text);background:rgba(255,255,255,.08);border-radius:var(--pill);padding:2px 12px}
+.cchip.done{border-style:solid;border-color:var(--green);color:var(--green)}
+.cchip.txt{font-family:var(--font);font-size:16px;font-weight:600;color:var(--text);border-radius:var(--pill);padding:8px 18px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 0;padding:0;list-style:none}
+.tags li{font-size:14px;color:var(--silver);border:1px solid var(--line);border-radius:var(--pill);padding:2px 12px;background:var(--panel2)}
+.tags li bdi{color:var(--text)}
+.io{display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:stretch;margin-top:18px}
+.iobox{border-radius:var(--r2);padding:16px 18px;background:var(--panel2);border:1px solid var(--line)}
+.iobox b{display:block;font-size:18px;margin-bottom:6px}
+.iobox ul{margin:0;padding:0 20px 0 0}.iobox li{margin:2px 0}
+.iobox small{display:block;margin-top:8px;color:var(--muted);font-size:14px}
+.iobox.in{border-top:4px solid var(--silver)}.iobox.out{border-top:4px solid var(--gold)}
+.iobox.out b{color:var(--gold)}
+.ioarrow{align-self:center;font-size:30px;color:var(--gold)}
+@media(max-width:700px){.io{grid-template-columns:1fr}.ioarrow{justify-self:center;transform:rotate(-90deg)}}
+
+/* steps as images */
+.flow{display:grid;gap:18px;margin-top:22px}
+.phase{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:20px}
+.ph{margin:0 0 16px;font-size:20px}
+.row3{display:grid;gap:16px;grid-template-columns:repeat(3,1fr)}
+.row4{display:grid;gap:16px;grid-template-columns:repeat(2,1fr)}
+.shot{margin:0;display:flex;flex-direction:column;gap:12px;align-items:stretch}
+.shot .zoom,.ospane .zoom{display:block;border-radius:var(--r2);overflow:hidden;border:1px solid rgba(242,193,78,.35);background:#000;cursor:zoom-in;transition:transform .2s,border-color .2s}
+.shot .zoom:hover{transform:translateY(-3px);border-color:var(--gold)}
+.shot img,.ospane img{display:block;width:100%;height:auto}
+.shot .act{display:flex;justify-content:center}
+.next{justify-self:center;color:var(--gold);font-weight:600;font-size:15px;border:1px solid var(--line);border-radius:var(--pill);padding:3px 16px;background:var(--panel2)}
+@media(max-width:820px){.row3{grid-template-columns:1fr;max-width:340px;margin:0 auto}.row4{grid-template-columns:1fr;max-width:420px;margin:0 auto}.phase{padding:16px}}
+
+/* privacy chapter */
+.pv{display:grid;gap:16px}
+.pvs{display:flex;gap:16px;align-items:flex-start;background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:20px}
+.pvs>i{flex:none;font-style:normal;width:40px;height:40px;border-radius:50%;background:var(--gold);color:var(--ink);display:grid;place-items:center;font-weight:800;font-size:20px}
+.pvs>div{min-width:0;flex:1}
+.pvs h3{margin:0 0 4px;font-size:21px}.pvs p{margin:0;color:var(--muted)}
+.pvs .ask{margin-top:18px;color:var(--text);font-weight:600;font-size:18px}
+.ospick{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px;max-width:460px}
+.ospick button{font-family:inherit;font-size:20px;font-weight:700;padding:14px 10px;border-radius:var(--pill);border:1px solid var(--line);background:transparent;color:var(--text);cursor:pointer;transition:border-color .15s,background .15s;min-height:44px}
+.ospick button:hover{border-color:var(--gold)}
+.ospick button[aria-selected=true]{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+.ospane{margin-top:16px;max-width:640px}
+.ospane[hidden]{display:none}
+.promptbox{margin:12px 0 0;background:var(--panel2);border:1px solid var(--line);border-radius:var(--r2);padding:14px 16px;color:var(--text);font-size:16.5px}
+.btnrow{display:flex;flex-wrap:wrap;gap:12px;margin-top:14px;align-items:center}
+@media(max-width:600px){.pvs{padding:16px;gap:12px}.pvs>i{width:34px;height:34px;font-size:17px}}
+
+/* demo */
+.demo{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.dc{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:18px 20px;border-top:3px solid var(--gold)}
+.dc b{display:block;font-size:18px;margin-bottom:4px}.dc p{margin:0;color:var(--muted);font-size:16px}
+.dc small{display:block;margin-top:6px;color:var(--silver);font-size:14px}
+.extra{margin-top:18px;background:var(--panel);border:1px dashed var(--gold);border-radius:var(--r);padding:18px 20px}
+.extra p{margin:0 0 12px}
+
+/* go */
+.go{text-align:center;background:linear-gradient(135deg,rgba(242,193,78,.1),var(--panel) 65%);border:1px solid rgba(242,193,78,.45);border-radius:var(--r);padding:34px 22px}
+.go h2{margin-bottom:6px}.go p.lead{margin:0 auto 24px}
+.go .big{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+.go .btn{font-size:19px;padding:15px 30px}
+.go .num{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--ink);color:var(--gold);font-size:14px;font-weight:800}
+.go .btn.alt .num{background:var(--gold);color:var(--ink)}
+.go .sm{margin-top:18px;font-size:15px}
+@media(max-width:600px){.go .btn{width:100%;max-width:330px;font-size:17px;padding:14px 16px;white-space:nowrap}}
+#copyok{color:var(--green);font-size:15px;min-height:1.4em;margin-top:12px}
+
+/* community */
+.join{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center;background:linear-gradient(135deg,rgba(242,193,78,.1),var(--panel) 60%);border:1px solid rgba(242,193,78,.45);border-radius:var(--r);padding:28px}
+.join img{width:150px;height:150px;border-radius:24px;display:block;box-shadow:var(--shadow),0 0 0 1px rgba(255,255,255,.08)}
+.join h2{font-size:clamp(24px,3.4vw,34px);margin:0 0 8px}
+.join p{margin:0 0 16px;color:var(--muted);max-width:560px}
+.join .lnk{display:block;margin-top:12px;direction:ltr;text-align:right;font-size:14px;color:var(--muted);word-break:break-all}
+@media(max-width:640px){.join{grid-template-columns:1fr;padding:22px}.join img{width:112px;height:112px}}
+.note{border:1px dashed var(--gold);border-radius:var(--r2);padding:14px 16px;background:rgba(242,193,78,.06);font-size:15.5px}
+
+/* lightbox, bar, toast */
+dialog#lb{border:0;padding:0;background:transparent;max-width:none;max-height:none;width:100vw;height:100dvh;margin:0;color:var(--text)}
+dialog#lb[open]{display:grid;place-items:center;background:rgba(0,0,0,.9);padding:70px 14px 56px;cursor:zoom-out}
+dialog#lb::backdrop{background:rgba(0,0,0,.9)}
+dialog#lb img{display:block;max-width:min(100%,780px);max-height:calc(100dvh - 140px);width:auto;height:auto;border-radius:var(--r2);border:2px solid var(--gold)}
+dialog#lb #lbx{position:fixed;top:12px;right:12px;min-height:48px;padding:0 22px;border-radius:var(--pill);border:0;background:var(--gold);color:var(--ink);font-family:inherit;font-weight:700;font-size:17px;cursor:pointer;z-index:2;box-shadow:var(--shadow)}
+dialog#lb .lbh{position:fixed;bottom:16px;left:0;right:0;text-align:center;margin:0;color:#cfd8ea;font-size:15px}
+.bar{position:fixed;top:0;left:0;right:0;z-index:35;background:rgba(4,10,24,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);transform:translateY(-100%);visibility:hidden;transition:transform .25s,visibility 0s .25s}
+.bar.show{transform:none;visibility:visible;transition:transform .25s}
+.bin{max-width:1000px;margin:0 auto;padding:8px 24px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.bt{display:flex;align-items:center;gap:10px;font-weight:600}
+.bt img{width:30px;height:30px;border-radius:8px;display:block}
+#toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:#0f2a1c;color:#d7ffe8;border:1px solid var(--green);border-radius:var(--pill);padding:12px 22px;font-size:16px;font-weight:500;z-index:80;max-width:calc(100vw - 32px);text-align:center;transition:opacity .2s,transform .2s;box-shadow:var(--shadow)}
+#toast.show{opacity:1;transform:translate(-50%,0)}
+#toast.bad{background:#2b1010;color:#ffd7d7;border-color:var(--red)}
+#top{position:fixed;left:18px;bottom:18px;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--panel);color:var(--gold);font-size:20px;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .2s;z-index:30}
+#top.show{opacity:1;pointer-events:auto}
+footer{padding:40px 0 70px;border-top:1px solid var(--line);color:var(--muted);font-size:14.5px}
+footer p{margin:0 0 10px;max-width:760px}
+footer .credit{color:var(--text);font-size:16px}
+footer .mark{display:flex;align-items:center;gap:10px;color:var(--silver);font-weight:600}
+footer .mark img{width:32px;height:32px;border-radius:8px}
+@media(max-width:380px){.cchip{font-size:20px;gap:8px;padding:8px 12px}.cchip .cl{font-size:13px}}
+@media(max-width:600px){body{font-size:16px}.hero .in{padding-top:84px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.bar,#toast,.shot .zoom{transition:none}}
+@media print{body{background:#fff;color:#000}.hero canvas,#top,#progress,.cta,.bar{display:none}.hero::after{display:none}.hero{min-height:0;background:#fff}.hero .in{padding:20px 0}}
+</style>
+</head>
+<body>
+<a class='skip' href='#main'>דלגו לתוכן</a>
+<div id='progress' aria-hidden='true'></div>
+<div id='bar' class='bar'><div class='bin'><span class='bt'><img src='assets/medacademy-logo.png' alt='' width='30' height='30'>AI בפעולה · אתר המשך</span><a class='btn sm' href='https://www.openevidence.com/' target='_blank' rel='noopener'>מעבר ל-OpenEvidence</a></div></div>
+
+<header class='hero'>
+<canvas id='fx' aria-hidden='true'></canvas>
+<div class='in'>
+<img class='brand' src='assets/medacademy-wordmark.webp' alt='MedAcademy.AI' width='720' height='360'>
+<span class='chip'>אתר המשך לוובינר</span>
+<h1>AI בפעולה<br><span class='g'>במרפאה וביום יום</span></h1>
+<p class='sub'>הכלים מההרצאה, צעד אחר צעד, בתמונות. בלי ידע טכני.</p>
+<div class='cta'>
+<a class='btn' href='#steps'>מתחילים</a>
+</div>
+<div class='byline'>ד״ר רועי שליט<small>מנהל מכון סוכרת נתניה · מנהל תחום AI וחדשנות באגודה האנדוקרינית הישראלית</small></div>
+</div>
+</header>
+
+<div class='page'>
+<main id='main'>
+
+<section id='warn' style='border-top:0;padding-bottom:20px'>
+<div class='warnrow'>
+<div class='alert'><i aria-hidden='true'>!</i><div><b>לא מכניסים מידע מזהה</b><span>בלי שם, תעודת זהות, טלפון או כתובת של המטופל.</span></div></div>
+<div class='alert'><i aria-hidden='true'>!</i><div><b>AI עלול לטעות</b><span>בודקים כל ערך מול התיק, כל ציון מול המחשבון, וכל המלצה מול המקור.</span></div></div>
+</div>
+</section>
+
+<section id='steps'>
+<h2>מה זה, ואיך מגיעים</h2>
+<div class='tool'>
+<p class='what'>כלי עזר לרופאות ולרופאי המשפחה העסוקים, לריבוד סיכונים קרדיומטבולי באדם עם השמנה. מופעל ב-OpenEvidence בשם:</p>
+<button class='cchip' type='button' data-copy='.cardiobesity' aria-label='העתקת השם cardiobesity'><bdi dir='ltr'>.cardiobesity</bdi><svg class='ci' viewBox='0 0 24 24' width='22' height='22' aria-hidden='true' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='9' y='9' width='12' height='12' rx='2'/><path d='M5 15V5a2 2 0 0 1 2-2h10'/></svg><span class='cl'>לחצו להעתקה</span></button>
+<ul class='tags' aria-label='מה נבדק'>
+<li><bdi dir='ltr'>STOP-Bang</bdi></li><li><bdi dir='ltr'>FIB-4</bdi></li><li><bdi dir='ltr'>SCORE2 / PREVENT</bdi></li><li><bdi dir='ltr'>KDIGO</bdi></li><li><bdi dir='ltr'>HbA1c</bdi></li><li>פרופיל שומנים</li>
+</ul>
+<div class='io'>
+<div class='iobox in'><b>מכניסים</b><ul><li>סיכום תיק מותמם</li><li>אנמנזה, תסמינים, מדדים ובדיקות מעבדה</li></ul><small>בצורה חסויה, בלי פרטים מזהים</small></div>
+<div class='ioarrow' aria-hidden='true'>←</div>
+<div class='iobox out'><b>מקבלים</b><ul><li>רשומה קלינית <bdi dir='ltr'>SOAP</bdi> להדבקה בתיק</li><li>ציונים ורשימת מידע חסר, עם המלצה לבירור</li><li>המלצות למטופל בשפה פשוטה</li></ul></div>
+</div>
+<p class='src'>זהו Dotflow מהקהילה, ולא כלי רשמי של OpenEvidence.</p>
+</div>
+
+<div class='flow'>
+<div class='phase'><h3 class='ph'>שלבים 1 עד 3: כניסה וחיפוש</h3>
+<div class='row3'>
+<figure class='shot'><a href='assets/steps/step1.webp' class='zoom' aria-label='הגדלת תמונה: שלב 1: נכנסים לאתר openevidence.com ומתחברים לחשבון'><img src='assets/steps/step1.webp' alt='שלב 1: נכנסים לאתר openevidence.com ומתחברים לחשבון' width='432' height='1227' loading='lazy'></a><div class='act'><a class='btn' href='https://www.openevidence.com/' target='_blank' rel='noopener'>לפתיחת OpenEvidence</a></div></figure>
+<figure class='shot'><a href='assets/steps/step2.webp' class='zoom' aria-label='הגדלת תמונה: שלב 2: בתפריט השמאלי לוחצים על Tools ואז על Dotflows'><img src='assets/steps/step2.webp' alt='שלב 2: בתפריט השמאלי לוחצים על Tools ואז על Dotflows' width='416' height='1227' loading='lazy'></a></figure>
+<figure class='shot'><a href='assets/steps/step3.webp' class='zoom' aria-label='הגדלת תמונה: שלב 3: לוחצים על Community Dotflows, מחפשים Obesity ובוחרים את cardiobesity'><img src='assets/steps/step3.webp' alt='שלב 3: לוחצים על Community Dotflows, מחפשים Obesity ובוחרים את cardiobesity' width='433' height='1227' loading='lazy'></a></figure>
+</div></div>
+<div class='next' aria-hidden='true'>↓ ממשיכים</div>
+<div class='phase'><h3 class='ph'>שלבים 4 עד 7: הוספה, שיחה חדשה והזנת סיפור המקרה</h3>
+<div class='row4'>
+<figure class='shot'><a href='assets/steps/step4.webp' class='zoom' aria-label='הגדלת תמונה: שלב 4: לוחצים על Add to my dotflows כדי לשמור את הדוטפלו'><img src='assets/steps/step4.webp' alt='שלב 4: לוחצים על Add to my dotflows כדי לשמור את הדוטפלו' width='658' height='640' loading='lazy'></a></figure>
+<figure class='shot'><a href='assets/steps/step5.webp' class='zoom' aria-label='הגדלת תמונה: שלב 5: לוחצים על New Conversation כדי לפתוח שיחה חדשה'><img src='assets/steps/step5.webp' alt='שלב 5: לוחצים על New Conversation כדי לפתוח שיחה חדשה' width='575' height='640' loading='lazy'></a></figure>
+<figure class='shot'><a href='assets/steps/step6.webp' class='zoom' aria-label='הגדלת תמונה: שלב 6: לוחצים על סימן הפלוס, בוחרים Dotflows ואז cardiobesity'><img src='assets/steps/step6.webp' alt='שלב 6: לוחצים על סימן הפלוס, בוחרים Dotflows ואז cardiobesity' width='540' height='640' loading='lazy'></a></figure>
+<figure class='shot'><a href='assets/steps/step7.webp' class='zoom' aria-label='הגדלת תמונה: שלב 7: מזינים את סיפור המקרה כולל אנמנזה, בדיקות ומעבדה'><img src='assets/steps/step7.webp' alt='שלב 7: מזינים את סיפור המקרה כולל אנמנזה, בדיקות ומעבדה' width='695' height='640' loading='lazy'></a><div class='act'><a class='btn alt' href='#go'>להעתקת סיפור המקרה</a></div></figure>
+</div></div>
+</div>
+</section>
+
+<section id='privacy'>
+<h2>איך מעתיקים מידע בצורה אנונימית</h2>
+<p class='lead'>השלב הראשון והחשוב ביותר: לפני שמדביקים מקרה אמיתי, מעתיקים את הנתונים הרפואיים בלבד, בלי פרטים מזהים.</p>
+<div class='pv'>
+<div class='pvs'><i>1</i><div><h3>אנמנזה</h3><p>מעתיקים ישירות מהקליקס, ותמיד מוודאים חיסיון: אין בטקסט שם, תעודת זהות, טלפון או כתובת.</p></div></div>
+<div class='pvs'><i>2</i><div><h3>בדיקות מעבדה ומדדים</h3>
+<p>גוזרים רק את הבדיקות בעזרת כלי הגזירה, בלי שורת הפרטים האישיים.</p>
+<p class='ask' id='askos'>איזה מחשב יש לכם?</p>
+<div class='ospick' role='tablist' aria-labelledby='askos'>
+<button type='button' role='tab' id='tab-mac' aria-controls='pane-mac' aria-selected='false' data-os='mac'>Mac</button>
+<button type='button' role='tab' id='tab-win' aria-controls='pane-win' aria-selected='false' data-os='win'>Windows</button>
+</div>
+<div class='ospane' id='pane-mac' role='tabpanel' aria-labelledby='tab-mac' hidden><a class='zoom' href='assets/shot-mac.webp' aria-label='הגדלת התמונה'><img src='assets/shot-mac.webp' alt='Mac: מקישים Shift, Command ו-5 יחד. נפתח סרגל צילום מסך, בוחרים אזור ולוחצים Capture' width='622' height='493' loading='lazy'></a></div>
+<div class='ospane' id='pane-win' role='tabpanel' aria-labelledby='tab-win' hidden><a class='zoom' href='assets/shot-win.webp' aria-label='הגדלת התמונה'><img src='assets/shot-win.webp' alt='Windows: מקישים Shift, Windows ו-S יחד. נפתח כלי הגזירה, בוחרים אזור ומצלמים, או משתמשים ב-Text Extractor' width='593' height='493' loading='lazy'></a></div>
+<noscript><style>.ospane[hidden]{display:block}</style></noscript>
+</div></div>
+<div class='pvs'><i>3</i><div><h3>הפיכת הגזירה לטקסט</h3>
+<p>אחרי הגזירה מדביקים את התמונה ב-ChatGPT או ב-Gemini ומבקשים את הפרומפט הבא:</p>
+<p class='promptbox' id='ocrp'>תעשה OCR מדויק לכל הנתונים שאני מדביק על מנת שאוכל להעתיק כטקסט חופשי לתיק הרפואי ללא טבלאות</p>
+<div class='btnrow'>
+<button class='cchip txt' type='button' data-copy='תעשה OCR מדויק לכל הנתונים שאני מדביק על מנת שאוכל להעתיק כטקסט חופשי לתיק הרפואי ללא טבלאות' aria-label='העתקת הפרומפט'><svg class='ci' viewBox='0 0 24 24' width='20' height='20' aria-hidden='true' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='9' y='9' width='12' height='12' rx='2'/><path d='M5 15V5a2 2 0 0 1 2-2h10'/></svg><span class='cl'>העתקת הפרומפט</span></button>
+<a class='btn alt' href='https://gemini.google.com/gem/1DNTxwnmM_QZWnf1IaJHiZwQOZ8yYATFg?usp=sharing' target='_blank' rel='noopener'>לפתיחה ב-Gemini</a>
+</div>
+<p class='src'>אלה כלים חיצוניים. מוודאים שהתמונה אינה כוללת פרטים מזהים לפני ההעלאה.</p></div></div>
+</div>
+</section>
+
+<section id='demo'>
+<h2>מה קורה אחרי ההדבקה</h2>
+<p class='lead'>בתוך כדקה מתקבלים שני מסמכים מוכנים. כך זה נראה במקרה לדוגמה.</p>
+<div class='demo'>
+<div class='dc'><b>1. הקלט</b><p>סיכום תיק מותמם: אנמנזה, תסמינים, מדדים ובדיקות מעבדה.</p></div>
+<div class='dc'><b>2. חישוב ציונים</b><p>המערכת מחשבת ציונים מתוך התיק, למשל <bdi dir='ltr'>STOP-Bang</bdi>.</p><small>בדוגמה: ציון חלקי 6 מתוך 8</small></div>
+<div class='dc'><b>3. חסר מידע?</b><p>היא לא ממציאה ערכים. היא מסמנת חישוב חלקי, מפרטת מה חסר ולמה, וממליצה על הבירור.</p></div>
+<div class='dc'><b>4. התוצר</b><p>רשומה קלינית <bdi dir='ltr'>SOAP</bdi> להדבקה בתיק, והמלצות למטופל בשפה פשוטה.</p></div>
+</div>
+<div class='extra'>
+<p><b>שלב ההמשך בדוגמה:</b> כשהמערכת מבקשת מידע חסר, מדביקים את הנתונים הבאים והיא מחשבת מחדש.</p>
+<button class='cchip txt' type='button' data-copy='היקף צוואר: 43.5 ס"מ | AST: 38 U/L | ALT: 52 U/L | טסיות: 210,000 / µL | גלוקוז בצום: 108 mg/dL | HDL: 38 mg/dL | eGFR: 88 mL/min/1.73m² | UACR: 45 mg/g' aria-label='העתקת המידע המשלים'><svg class='ci' viewBox='0 0 24 24' width='20' height='20' aria-hidden='true' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='9' y='9' width='12' height='12' rx='2'/><path d='M5 15V5a2 2 0 0 1 2-2h10'/></svg><span class='cl'>העתקת המידע המשלים</span></button>
+</div>
+</section>
+
+<section id='go' style='border-top:0;padding-top:10px'>
+<div class='go'>
+<h2>מוכנים לנסות?</h2>
+<p class='lead'>העתיקו את סיפור המקרה לדוגמה, עברו ל-OpenEvidence, והדביקו אותו בשיחה אחרי שבחרתם את הדוטפלו cardiobesity.</p>
+<div class='big'>
+<button class='btn' id='copy' type='button'><span class='num'>1</span>העתקת סיפור המקרה</button>
+<a class='btn alt' href='https://www.openevidence.com/' target='_blank' rel='noopener'><span class='num'>2</span>מעבר ל-OpenEvidence</a>
+</div>
+<div id='copyok' role='status' aria-live='polite'></div>
+<p class='sm'><button class='cchip txt' type='button' data-copy='.cardiobesity' aria-label='העתקת השם cardiobesity'><bdi dir='ltr'>.cardiobesity</bdi><svg class='ci' viewBox='0 0 24 24' width='20' height='20' aria-hidden='true' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='9' y='9' width='12' height='12' rx='2'/><path d='M5 15V5a2 2 0 0 1 2-2h10'/></svg><span class='cl'>העתקת השם</span></button></p>
+<p class='sm' style='margin-top:10px'><a href='https://www.openevidence.com/ask/95f6c55f-d447-4358-8875-361eacfb0599' target='_blank' rel='noopener'>לצפייה בשיחה המלאה לדוגמה ב-OpenEvidence</a></p>
+</div>
+</section>
+
+<section id='community'>
+<div class='join'>
+<img src='assets/medacademy-logo.png' alt='לוגו MedAcademy.AI' width='150' height='150' loading='lazy'>
+<div>
+<h2>מוזמנים לקבוצת הוואטסאפ השקטה שלנו</h2>
+<p>קבוצה של MedAcademy.AI לרופאות ולרופאים, להתנסות משותפת בכלי AI שאפשר להשתמש בהם בקליניקה כבר מחר. תתחילו להתנסות!</p>
+<a class='btn' href='https://chat.whatsapp.com/FjFFPCs3LGmG0XC7YJNRRt' target='_blank' rel='noopener'>להצטרפות לקבוצה</a>
+<a class='lnk' href='https://chat.whatsapp.com/FjFFPCs3LGmG0XC7YJNRRt' target='_blank' rel='noopener'>https://chat.whatsapp.com/FjFFPCs3LGmG0XC7YJNRRt</a>
+</div>
+</div>
+</section>
+
+<section id='disclosures' style='padding:30px 0'>
+<div class='note'>התוכן בחסות חברת אלי לילי ומיועד לצוות הרפואי בלבד.</div>
+</section>
+</main>
+</div>
+
+<footer><div class='page'>
+<p class='credit'>האתר נוצר על ידי ד״ר רועי שליט, <a href='mailto:dr.rshalit@gmail.com'>dr.rshalit@gmail.com</a>, לצורך לימודי בלבד.</p>
+<p>האתר הוא עזר לימודי, ואינו מהווה ייעוץ רפואי או תחליף לשיקול דעת קליני. עודכן ב-29.10.2026.</p>
+<p class='mark'><img src='assets/medacademy-logo.png' alt='' width='32' height='32'>MedAcademy.AI | רפואת המחר</p>
+</div></footer>
+<dialog id='lb' aria-label='תמונה מוגדלת'><button type='button' id='lbx' aria-label='סגירה וחזרה לדף'>✕ סגירה</button><img alt='' src=''><p class='lbh'>לחצו בכל מקום כדי לחזור</p></dialog>
+<button id='top' type='button' aria-label='חזרה לראש העמוד'>↑</button>
+
+<script type='text/plain' id='casetxt'>מקרה לדוגמה
+בן 53, נשוי, אב לשלושה, מנהל תפעול בחברת לוגיסטיקה.
+סיבת הטיפול: הגיע למרפאה לצורך חידוש מרשמים ללחץ דם ולכולסטרול ("קצת ממהר"). בדיקות הדם בוצעו בעקבות דרישת רעייתו.
+
+אנמנזה רפואית ותסמינים:
+היסטוריית משקל ודיאטות: ניסיונות חוזרים לירידה במשקל בעבר, כולל צום לסירוגין, דיאטות שונות, אימונים גופניים והפחתת נשנושים. מדווח על ירידה זמנית במשקל ולאחר מכן עלייה חוזרת.
+אנמנזת שינה ותסמינים ליליים:
+דיווח המטופל: מדווח כי נרדם תוך 2 דקות ותופס את איכות שנתו כמעולה (6-7 שעות שינה).
+תסמינים מדווחים (כולל הבהרות רעייתו): נחירות חזקות (שימוש באטמי אוזניים על ידי הרעיה), הפסקות נשימה נצפות בלילה, נוקטוריה (קימה מספר פעמים בלילה להשתנה), ועייפות בבקרים.
+
+מדדים פיזיקליים ובדיקות מעבדה:
+משקל: 108 ק"ג
+גובה: 176 ס"מ
+BMI: 34.9
+היקף מותניים: 116 ס"מ
+לחץ דם: 146/92
+HbA1c: 6.1%
+LDL: 128 mg/dL
+טריגליצרידים: 224 mg/dL</script>
+
+<script src='assets/app.js?v=20261029a' defer></script>
+<script defer src='/_vercel/insights/script.js'></script>
+</body>
+</html>
